@@ -1,3 +1,7 @@
+Javascript Variable
+
+
+
 <h1>Example or Excercise:</h1>
 <div>
 <h3>Example 1 :</h3>
@@ -61,3 +65,63 @@ Changing object properties is allowed with const.
 Reassigning the entire object (person = {}) is not allowed and would cause a TypeError.</p>
 </div>
  
+
+<!-- Javascript Datatype: -->
+<div>
+ <h3>Example 1 :</h3>
+<p>true + false </p>
+<p>Answer or Error: 1</p>
+<p>Why :  true is converted to 1,false is converted to 0,1 + 0 = 1</p>
+</div>
+ 
+<div>
+<h3>Example 2 :</h3>
+<p>null + 1 </p>
+<p>Answer or Error: 1</p>
+<p>Why : null is converted to 0 in numeric operations,0 + 1 = 1</p>
+</div>
+ 
+<div>
+<h3>Example 3 :</h3>
+<p>"12" + 12 </p>
+<p>Answer or Error: '1212'</p>
+<p>Why : + with a string performs string concatenation,Number 12 is converted to a string,"12" + "12" = '1212'</p>
+</div>
+ 
+<div>
+<h3>Example 4 :</h3>
+<p>!! undefined</p>
+<p>Answer or Error: false</p>
+<p>Why : undefined is a falsy value
+First ! converts it to true
+Second ! converts it back to boolean false</p>
+</div>
+ 
+<div>
+<h3>Example 5 :</h3>
+<p>"12" - 1 </p>
+<p>Answer or Error: 11</p>
+<p>Why : - operator forces numeric conversion   
+"12" becomes 12
+12 - 1 = 11</p>
+</div>
+ 
+<div>
+<p> why typeof NaN --> number </p> 
+<p>NaN is a failed number oprations that why that type is number</p>
+<p> ex. "hello" + 5 --> NaN</p>
+<p>Answer or Error: "number"</p>
+<p>Why : NaN means Not a Number, but it represents a failed numeric operation
+JavaScript still treats it as part of the Number datatype</p>
+</div>
+ 
+<div>
+<p>Undefined vs Null</p>
+<p>let x;</p>
+<p>console.log(x);</p>
+<p>let y = null;</p>
+<p>console.log(y);</p>
+<p>Answer or Error: undefined,null</p>
+<p>Why : undefined:-Memory is allocated, but no value is stored yet.
+null:-The variable exists, but you are explicitly saying “this has no value”.</p>
+</div>
