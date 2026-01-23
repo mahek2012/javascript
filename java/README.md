@@ -128,144 +128,171 @@ null:-The variable exists, but you are explicitly saying “this has no value”
 
 
 <!-- javascript Operator: -->
-<!-- Example 1 -->
-<div class="example">
-  <h3>Example 1: Hoisting Error (let)</h3>
-
-  <p><b>Code:</b></p>
-  <pre>
-console.log(a);
-let a = 10;
-  </pre>
-
-  <p><b>Answer / Error:</b></p>
-  <p class="error">❌ Error: Cannot access 'a' before initialization</p>
-
-  <p><b>Why:</b></p>
-  <p>
-    Variables declared with <code>let</code> are hoisted,
-    but they are not initialized.
-    Accessing them before declaration causes an error.
-  </p>
+<div>
+<h1>Example 1 :</h1>
+<p>let x = 10;</p>
+<p>let y = 20;</p>
+<p>if(x>5 && y > 5){
+    console.log("Both are greater than 5");
+}else{
+    console.log("One or both are not greater than 5");
+}</p>
+<p>Answer or Error: Both are greater than 5</p>
+<p>Why : && (AND) returns true only if both conditions are true,
+x > 5 → true, y > 5 → true</p>
+</div>
 </div>
 
-<!-- Example 2 -->
-<div class="example">
-  <h3>Example 2: Unary + Operator</h3>
-
-  <p><b>Code:</b></p>
-  <pre>
-console.log(+"5" + 5);
-  </pre>
-
-  <p><b>Answer:</b></p>
-  <p class="answer">10</p>
-
-  <p><b>Why:</b></p>
-  <p>
-    The unary <code>+</code> operator converts the string <code>"5"</code>
-    into a number, so numeric addition is performed.
-  </p>
+<div>
+<h1>Example 2 :</h1>
+<p>let isAdmin = true;</p>
+<p>let isLoggedIn = false;</p>
+<p>if(isAdmin || isLoggedIn){
+    console.log("Acess granted");
+}else{
+    console.log("Acess Denied");
+}</p>
+<p>Answer or Error: Access granted</p>
+<p>Why : || (OR) returns true if any one condition is true,
+isAdmin is true</p>
 </div>
 
-<!-- Example 3 -->
-<div class="example">
-  <h3>Example 3: String Concatenation</h3>
-
-  <p><b>Code:</b></p>
-  <pre>
-console.log("5" + 5);
-  </pre>
-
-  <p><b>Answer:</b></p>
-  <p class="answer">55</p>
-
-  <p><b>Why:</b></p>
-  <p>
-    When the <code>+</code> operator is used with a string,
-    JavaScript performs string concatenation.
-  </p>
+<div>
+<h1>Example 3 :</h1>
+<p>let temp = 35;</p>
+<p>if(!(temp > 30)){
+    console.log("Hot day");
+}else{
+    console.log("Pleasant day");
+}</p>
+<p>Answer or Error: Pleasant day</p>
+<p>Why : temp > 30 → true,
+!true → false,
+if condition fails, so else runs</p>
 </div>
 
-<!-- Example 4 -->
-<div class="example">
-  <h3>Example 4: typeof null</h3>
-
-  <p><b>Code:</b></p>
-  <pre>
-console.log(typeof null);
-  </pre>
-
-  <p><b>Answer:</b></p>
-  <p class="answer">object</p>
-
-  <p><b>Why:</b></p>
-  <p>
-    This is a long-standing bug in JavaScript.
-    Even though <code>null</code> is a primitive value,
-    <code>typeof</code> returns <code>object</code>.
-  </p>
+<div>
+<h1>Example 4 :</h1>
+<p>let a = 0;</p>
+<p>if(a){
+    console.log("Truthy value");
+}else{
+    console.log("Falsy value");
+}</p>
+<p>Answer or Error: Falsy value</p>
+<p>Why : 0 is a falsy value in JavaScript</p>
 </div>
 
-<!-- Example 5 -->
-<div class="example">
-  <h3>Example 5: typeof Array</h3>
-
-  <p><b>Code:</b></p>
-  <pre>
-let arr = [];
-console.log(typeof arr);
-console.log(arr instanceof Array);
-  </pre>
-
-  <p><b>Answer:</b></p>
-  <p class="answer">object<br>true</p>
-
-  <p><b>Why:</b></p>
-  <p>
-    Arrays are reference data types.
-    <code>typeof</code> returns <code>object</code> for arrays,
-    so <code>instanceof</code> is used to properly check arrays.
-  </p>
+<div>
+<h1>Example 5 :</h1>
+<p>let score = 78;</p>
+<p>let grade = score >= 90 ? "A" : score >= 80 ? "B" : score >= 70 ? "C" : "D";</p>
+<p>console.log("Grade:", grade);</p>
+<p>Answer or Error: Grade: C</p>
+<p>Why : 78 >= 70 is true,
+Ternary operator checks conditions from left to right</p>
 </div>
 
-<!-- Example 6 -->
-<div class="example">
-  <h3>Example 6: Logical NOT</h3>
-
-  <p><b>Code:</b></p>
-  <pre>
-console.log(!12);
-console.log(!!12);
-  </pre>
-
-  <p><b>Answer:</b></p>
-  <p class="answer">false<br>true</p>
-
-  <p><b>Why:</b></p>
-  <p>
-    Any non-zero number is truthy.
-    <code>!</code> reverses the boolean value,
-    and <code>!!</code> returns the original boolean value.
-  </p>
+<div>
+<h1>Example 6 :</h1>
+<p>let points = 120;</p>
+<p>let status = points >= 100 ? "Gold" : points >= 50 ? "Silver" : "Bronze";</p>
+<p>console.log("Status:", status);</p>
+<p>Answer or Error: Status: Gold</p>
+<p>Why : points >= 100 is true, so "Gold" is selected</p>
 </div>
 
-<!-- Example 7 -->
-<div class="example">
-  <h3>Example 7: Ternary Operator</h3>
+<div>
+<h1>Example 7:</h1>
+<p>let loggedIn = true;</p>
+<p>let hasToken = false;</p>
+<p>let access = loggedIn && hasToken ? "Allow" : "Deny";</p>
+<p>console.log("access:", access);</p>
+<p>Answer or Error: access: Deny</p>
+<p>Why : && requires both values to be true,
+hasToken is false</p>
+</div>
 
-  <p><b>Code:</b></p>
-  <pre>
-let result = 12 > 13 ? "true" : "false";
-console.log(result);
-  </pre>
+<div>
+<h1>Example 8:</h1>
+<p>let a = 5;</p>
+<p>a++</p>
+<p>console.log(a);</p>
+<p>Answer or Error: 6</p>
+<p>Why : g++ increments the value by 1</p>
+</div>
 
-  <p><b>Answer:</b></p>
-  <p class="answer">false</p>
+<div>
+<h1>Example 9:</h1>
+<p>let a = 8;</p>
+<p>++a</p>
+<p>console.log(a);</p>
+<p>Answer or Error: 9</p>
+<p>Why : Pre-increment increases value before usage
+</p>
+</div>
 
-  <p><b>Why:</b></p>
-  <p>
-    The condition <code>12 > 13</code> is false,
-    so the else part of the ternary operator is executed.
-  </p>
+<div>
+<h1>Example 10:</h1>
+<p>let b = 4;</p>
+<p>let c = b++</p>
+<p>console.log(b, c);</p>
+<p>Answer or Error: 5 4</p>
+<p>Why : b++ assigns old value to c first, then increments b</p>
+</div>
+
+<div>
+<h1>Example 11:</h1>
+<p>let b = 4;</p>
+<p>let c = ++b</p>
+<p>console.log(b, c);</p>
+<p>Answer or Error: 5 5</p>
+<p>Why : ++r increments first, then assigns value</p>
+</div>
+
+<div>
+<h1>Example 12:</h1>
+<p>let m = 10;</p>
+<p>console.log(m--)</p>
+<p>console.log(m);</p>
+<p>Answer or Error: 10
+9</p>
+<p>Why : Post-decrement returns old value first, then decreases</p>
+</div>
+
+<div>
+<h1>Example 13:</h1>
+<p>let n = 5;</p>
+<p>let result = n++ + ++n;</p>
+<p>console.log(result);</p>
+<p>Answer or Error: 12</p>
+<p>Why : n++ → 5 (n becomes 6),
+++n → 7,
+5 + 7 = 12</p>
+</div>
+
+<div>
+<h1>Example 14:</h1>
+<p>let likes = 100;</p>
+<p>function likePost(){
+result ++likes;
+}</p>
+<p>console.log(likePost());</p>
+<p>console.log(likes);</p>
+<p>Answer or Error: SyntaxError</p>
+<p>Why : result ++likes; is invalid syntax
+Correct version:likes++;</p>
+</div>
+
+<div>
+<h1>Example 15:</h1>
+<p>let count = 5;</p>
+<p>if(count-- === 5){   
+console.log("Matched");
+}else{
+    console.log("Not Matched"); 
+}</p>
+<p>Answer or Error: Matched</p>
+<p>Why : count-- returns 5 first, then decrements,
+5 === 5 → true</p>
 </div>
