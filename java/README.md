@@ -309,9 +309,9 @@ console.log("Matched");
 }</P>
 <p>Answer or Error: Two
 Three</p>
-<p>Why : There is no break statement after case 2.
-Once a matching case is found, execution falls through to the next cases until a break or end of switch.
-So both "Two" and "Three" are printed.</p>
+<p>Why : The switch statement does not have break after case 2.
+When x === 2, execution starts at case 2 and falls through to case 3.
+So both "Two" and "Three" are printed..</p>
 <div>
 
 <div>
@@ -326,13 +326,12 @@ So both "Two" and "Three" are printed.</p>
 <p>33-59 D</P>
 <p>0-32 Fail</P>
 <p>Anything Else Invalid Marks</P>
-<p>Answer or Error: getGrade(85); // "A"
-getGrade(25); // "Fail"
-getGrade(150); // "Invalid Marks"
+<p>Answer or Error: A+
 </p>
-<p>Why : Uses if–else ladder to check score ranges.
-Conditions are checked top to bottom.
-If score does not fall in 0–100, it returns Invalid Marks.</p>
+<p>Why : score = 99
+First condition score >= 90 && score <= 100 is true
+Function immediately returns "A+"
+Remaining conditions are skipped.</p>
 <div>
 
 <div>
@@ -341,11 +340,8 @@ If score does not fall in 0–100, it returns Invalid Marks.</p>
 <p>rock - scissors --> rock</P>
 <p>paper - rock --> paper</P>
 <p>scissors - paper --> scissors</P>
-<p>Answer or Error: playGame("rock", "scissors");    // "rock"
-playGame("paper", "rock");       // "paper"
-playGame("scissors", "paper");   // "scissors"
+<p>Answer or Error: rock
 </p>
-<p>Why : Uses logical conditions to match winning rules.
-If both values are same → Draw
-Otherwise, the rule-defined winner is returned.</p>
+<p>Why : player1 = "rock" and player2 = "scissors"
+First condition matches: player1 === "rock" && player2 === "scissors"</p>
 <div>

@@ -121,46 +121,33 @@ function score1(value) {
   else return "Value is less than 60";
 }
 
-//Example 1
+
+// example1
 let x = 2;
-
 switch (x) {
-  case 2:
-    console.log("Two");
-  case 3:
-    console.log("Three");
+    case 2:
+        console.log("Two");
+    case 3:
+        console.log("Three");
 }
-//Example 2
-function getGrade(score) {
-  if (score >= 90 && score <= 100) {
-    return "A+";
-  } else if (score >= 80 && score <= 89) {
-    return "A";
-  } else if (score >= 70 && score <= 79) {
-    return "B";
-  } else if (score >= 60 && score <= 69) {
-    return "C";
-  } else if (score >= 33 && score <= 59) {
-    return "D";
-  } else if (score >= 0 && score <= 32) {
-    return "Fail";
-  } else {
-    return "Invalid Marks";
-  }
-}
-//Example 3
-function playGame(player1, player2) {
-  if (player1 === player2) {
-    return "Draw";
-  }
 
-  if (
-    (player1 === "rock" && player2 === "scissors") ||
-    (player1 === "paper" && player2 === "rock") ||
-    (player1 === "scissors" && player2 === "paper")
-  ) {
-    return player1;
-  } else {
-    return player2;
-  }
+// example 2
+function getGrade(score) {
+    if (score >= 90 && score <= 100) return "A+";
+    else if (score >= 80) return "A";
+    else if (score >= 70) return "B";
+    else if (score >= 60) return "C";
+    else if (score >= 33) return "D";
+    else if (score >= 0) return "Fail";
+    else return "Invalid Marks";
 }
+console.log(getGrade(99));
+
+//example 3
+function rps(player1, player2) {
+    if (player1 === "rock" && player2 === "scissors") return "rock";
+    else if (player1 === "paper" && player2 === "rock") return "paper";
+    else if (player1 === "scissors" && player2 === "paper") return "scissors";
+    else return "No Winner";
+}
+console.log(rps("rock", "scissors"));
