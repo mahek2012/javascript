@@ -296,3 +296,56 @@ console.log("Matched");
 <p>Why : count-- returns 5 first, then decrements,
 5 === 5 → true</p>
 </div>
+
+<!-- Javascript Controlflow -->
+<div>
+<h1>Example 1 :</h1>
+<p>let x = 2;</p>
+<p>switch(x){
+   case 2:
+   console.log("Two");
+   case 3:
+   console.log("Three");
+}</P>
+<p>Answer or Error: Two
+Three</p>
+<p>Why : There is no break statement after case 2.
+Once a matching case is found, execution falls through to the next cases until a break or end of switch.
+So both "Two" and "Three" are printed.</p>
+<div>
+
+<div>
+<h1>Example 2 :</h1>
+<p>Write a function getGrade(score) that:</p>
+<p> Takes A student's score as input (0 to 100)</P>
+<p>Returns the grade based on below logic:</P>
+<p>90-100 A+</P>
+<p>80-89 A</P>
+<p>70-79 B</P>
+<p>60-69 C</P>
+<p>33-59 D</P>
+<p>0-32 Fail</P>
+<p>Anything Else Invalid Marks</P>
+<p>Answer or Error: getGrade(85); // "A"
+getGrade(25); // "Fail"
+getGrade(150); // "Invalid Marks"
+</p>
+<p>Why : Uses if–else ladder to check score ranges.
+Conditions are checked top to bottom.
+If score does not fall in 0–100, it returns Invalid Marks.</p>
+<div>
+
+<div>
+<h1>Example 3 :</h1>
+<p>Rock-Paper-Scissors:</p>
+<p>rock - scissors --> rock</P>
+<p>paper - rock --> paper</P>
+<p>scissors - paper --> scissors</P>
+<p>Answer or Error: playGame("rock", "scissors");    // "rock"
+playGame("paper", "rock");       // "paper"
+playGame("scissors", "paper");   // "scissors"
+</p>
+<p>Why : Uses logical conditions to match winning rules.
+If both values are same → Draw
+Otherwise, the rule-defined winner is returned.</p>
+<div>

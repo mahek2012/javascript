@@ -95,3 +95,72 @@ switch ("BOGO") // value --> Case value sathe match karshe ane code run thase
   default:
     console.log("Offer Not Vaild");
 }
+
+// Early Return Pattern
+function score(value) {
+  if (value > 90) {
+    return "Value is more than 90";
+  } else if (value <= 60) {
+    return "Value is less than 60";
+  } else if (value <= 70) {
+    return "Value is less than 70";
+  } else if (value <= 80) {
+    return "Value is less than 80";
+  } else {
+    return "Value is less than 60";
+  }
+}
+
+console.log(score(65));
+
+function score1(value) {
+  if (value > 90) return "Value is more than 90";
+  else if (value < 80) return "Value is less than 80";
+  else if (value < 70) return "Value is less than 70";
+  else if (value < 60) return "Value is less than 60";
+  else return "Value is less than 60";
+}
+
+//Example 1
+let x = 2;
+
+switch (x) {
+  case 2:
+    console.log("Two");
+  case 3:
+    console.log("Three");
+}
+//Example 2
+function getGrade(score) {
+  if (score >= 90 && score <= 100) {
+    return "A+";
+  } else if (score >= 80 && score <= 89) {
+    return "A";
+  } else if (score >= 70 && score <= 79) {
+    return "B";
+  } else if (score >= 60 && score <= 69) {
+    return "C";
+  } else if (score >= 33 && score <= 59) {
+    return "D";
+  } else if (score >= 0 && score <= 32) {
+    return "Fail";
+  } else {
+    return "Invalid Marks";
+  }
+}
+//Example 3
+function playGame(player1, player2) {
+  if (player1 === player2) {
+    return "Draw";
+  }
+
+  if (
+    (player1 === "rock" && player2 === "scissors") ||
+    (player1 === "paper" && player2 === "rock") ||
+    (player1 === "scissors" && player2 === "paper")
+  ) {
+    return player1;
+  } else {
+    return player2;
+  }
+}
