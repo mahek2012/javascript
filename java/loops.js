@@ -113,3 +113,29 @@ for (let A = 1; A <= 10; A++) {
   }
   console.log(A);
 }
+
+
+//Example1
+for (let i = 1; i <= 10; i++) {
+  console.log(i);
+}
+//Example2
+let i = 10;
+while (i >= 1) {
+  console.log(i);
+  i--;
+}
+//Example3
+for (let i = 1; i <= 20; i++) {
+  if (i % 2 === 0) {
+    console.log(i);
+  }
+}
+//Example4
+let g = 1;
+while (g <= 15) {
+  if (g % 2 !== 0) {
+    console.log(g);
+  }
+  g++;
+}
