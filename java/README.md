@@ -648,8 +648,6 @@ Cleaner and more readable.</p>
 <p>Why : return; without value returns undefined by default</p>
 </div>
  
- 
-
 <div>
 <h1> Example 11: </h1>
 <p>What does is mean when we say "functions are first-class citizens"?</p>
@@ -916,3 +914,199 @@ Function declarations are fully hoisted,
 so they can be called before definition.
 </p>
 </div>
+
+<!-- Array Method : push, pop, shift, unshift, splice, slice, reverse -->
+
+
+
+<div>
+  <h1>Example 1: push()</h1>
+  <p>You are building a to-do app. Add a new task 'Buy milk' to the tasks array.</p>
+  <p>let tasks = ['Wake up', 'Brush teeth'];</p>
+  <p>tasks.push('Buy milk');</p>
+  <p>Answer or Error: ['Wake up','Brush teeth','Buy milk']</p>
+  <p>Why: push() array ke end me element add karta hai.</p>
+</div>
+
+<div>
+  <h1>Example 2: pop()</h1>
+  <p>Remove the last notification from the notifications array.</p>
+  <p>let notifications = ['Email','Message','Reminder'];</p>
+  <p>notifications.pop();</p>
+  <p>Answer or Error: ['Email','Message']</p>
+  <p>Why: pop() last element remove karta hai.</p>
+</div>
+
+<div>
+  <h1>Example 3: shift()</h1>
+  <p>A queue system removes the first customer.</p>
+  <p>let customers = ['Customer1','Customer2','Customer3'];</p>
+  <p>customers.shift();</p>
+  <p>Answer or Error: ['Customer2','Customer3']</p>
+  <p>Why: shift() first element remove karta hai.</p>
+</div>
+
+<div>
+  <h1>Example 4: unshift()</h1>
+  <p>A new song is added to the beginning of the playlist.</p>
+  <p>let playlist = ['Song B','Song C'];</p>
+  <p>playlist.unshift('Song A');</p>
+  <p>Answer or Error: ['Song A','Song B','Song C']</p>
+  <p>Why: unshift() start me element add karta hai.</p>
+</div>
+
+<div>
+  <h1>Example 5: splice()</h1>
+  <p>Remove 'Alex' and add 'John' and 'Sara' in the same position.</p>
+  <p>let students = ['Mike','Alex','Emma','Sophia'];</p>
+  <p>students.splice(1,1,'John','Sara');</p>
+  <p>Answer or Error: ['Mike','John','Sara','Emma','Sophia']</p>
+  <p>Why: splice() same index par remove aur add karta hai.</p>
+</div>
+
+<div>
+  <h1>Example 6: splice()</h1>
+  <p>Remove 2 items starting from index 1.</p>
+  <p>let menu = ['Burger','Pizza','Pasta','Salad'];</p>
+  <p>menu.splice(1,2);</p>
+  <p>Answer or Error: ['Burger','Salad']</p>
+  <p>Why: index 1 se 2 elements delete hue.</p>
+</div>
+
+<div>
+  <h1>Example 7: slice()</h1>
+  <p>Create a new array that contains only weekend days.</p>
+  <p>let days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];</p>
+  <p>let weekend = days.slice(5,7);</p>
+  <p>Answer or Error: ['Saturday','Sunday']</p>
+  <p>Why: slice() new array banata hai, original change nahi hota.</p>
+</div>
+
+<div>
+  <h1>Example 8: reverse()</h1>
+  <p>Reverse the order of levels in a game.</p>
+  <p>let levels = ['Easy','Medium','Hard'];</p>
+  <p>levels.reverse();</p>
+  <p>Answer or Error: ['Hard','Medium','Easy']</p>
+  <p>Why: reverse() array ko mutate karta hai.</p>
+</div>
+
+<div>
+  <h1>Example 9: sort()</h1>
+  <p>Sort the scores in ascending order.</p>
+  <p>let scores = [45,12,78,34,89];</p>
+  <p>scores.sort((a,b)=>a-b);</p>
+  <p>Answer or Error: [12,34,45,78,89]</p>
+  <p>Why: number sort ke liye compare function use hota hai.</p>
+</div>
+
+<div>
+  <h1>Example 10: sort() with numbers</h1>
+  <p>Sort the prices from lowest to highest.</p>
+  <p>let prices = [199,49,999,299,149];</p>
+  <p>prices.sort((a,b)=>a-b);</p>
+  <p>Answer or Error: [49,149,199,299,999]</p>
+  <p>Why: default sort string jaisa behave karta hai.</p>
+</div>
+
+<div>
+  <h1>Example 11: slice()</h1>
+  <p>Create a new array of the first 3 items without changing original.</p>
+  <p>let products = ['Laptop','Phone','Tablet','Monitor','Keyboard'];</p>
+  <p>let firstThree = products.slice(0,3);</p>
+  <p>Answer or Error: ['Laptop','Phone','Tablet']</p>
+  <p>Why: slice() non-mutating method hai.</p>
+</div>
+
+<div>
+  <h1>Example 12: splice() complex</h1>
+  <p>Remove 'Blue' and add 'Purple' and 'Orange'.</p>
+  <p>let colors = ['Red','Green','Blue','Yellow'];</p>
+  <p>colors.splice(2,1,'Purple','Orange');</p>
+  <p>Answer or Error: ['Red','Green','Purple','Orange','Yellow']</p>
+  <p>Why: splice() remove aur add dono karta hai.</p>
+</div>
+
+<div>
+  <h1>Example 13: reverse() + push()</h1>
+  <p>Reverse the array and then add 'Final Step'.</p>
+  <p>let steps = ['Step 1','Step 2','Step 3'];</p>
+  <p>steps.reverse(); steps.push('Final Step');</p>
+  <p>Answer or Error: ['Step 3','Step 2','Step 1','Final Step']</p>
+  <p>Why: reverse order badalta hai, push end me add karta hai.</p>
+</div>
+
+<div>
+  <h1>Example 14: sort() strings</h1>
+  <p>Sort names alphabetically, ignoring case sensitivity.</p>
+  <p>let names = ['alice','Bob','charlie','David'];</p>
+  <p>names.sort((a,b)=>a.toLowerCase().localeCompare(b.toLowerCase()));</p>
+  <p>Answer or Error: ['alice','Bob','charlie','David']</p>
+  <p>Why: toLowerCase() case ignore karta hai.</p>
+</div>
+
+<div>
+  <h1>Example 15: Combination Question</h1>
+  <p>Add 'Inception', remove first movie, then sort.</p>
+  <p>let movies = ['Avatar','Titanic','Gladiator'];</p>
+  <p>movies.push('Inception'); movies.shift(); movies.sort();</p>
+  <p>Answer or Error: ['Gladiator','Inception','Titanic']</p>
+  <p>Why: push add, shift remove, sort arrange karta hai.</p>
+</div>
+
+<div>
+  <h1>Example 16: splice() return value</h1>
+  <p>let nums1 = [1,2,3,4];</p>
+  <p>nums1.splice(1,2);</p>
+  <p>Answer or Error: [2,3]</p>
+  <p>Why: splice() removed elements return karta hai.</p>
+</div>
+
+<div>
+  <h1>Example 17: slice() immutability</h1>
+  <p>let nums2 = [10,20,30,40];</p>
+  <p>let result = nums2.slice(1,3);</p>
+  <p>Answer or Error: nums2 unchanged</p>
+  <p>Why: slice() original array change nahi karta.</p>
+</div>
+
+<div>
+  <h1>Example 18: reverse() mutation</h1>
+  <p>let letters = ['a','b','c'];</p>
+  <p>let reversedLetters = letters.reverse();</p>
+  <p>Answer or Error: letters bhi reverse ho jata hai</p>
+  <p>Why: reverse() mutating method hai.</p>
+</div>
+
+<div>
+  <h1>Example 19: splice() edge case</h1>
+  <p>let arr = ['x','y','z'];</p>
+  <p>arr.splice(1,0,'new');</p>
+  <p>Answer or Error: ['x','new','y','z']</p>
+  <p>Why: deleteCount 0 hone par sirf insert hota hai.</p>
+</div>
+
+<div>
+  <h1>Example 20: slice() negative index</h1>
+  <p>let values = [100,200,300,400,500];</p>
+  <p>let sliced = values.slice(-3,-1);</p>
+  <p>Answer or Error: [300,400]</p>
+  <p>Why: negative index end se count hota hai.</p>
+</div>
+
+<div>
+  <h1>Example 21: splice() vs slice()</h1>
+  <p>a) Update original array → splice()</p>
+  <p>b) Keep original unchanged → slice()</p>
+  <p>Why: splice mutating hai, slice non-mutating.</p>
+</div>
+
+<div>
+  <h1>Example 22: Chained methods</h1>
+  <p>let arr2 = [1,2,3];</p>
+  <p>arr2.push(arr2.shift());</p>
+  <p>Answer or Error: [2,3,1]</p>
+  <p>Why: shift first element nikalta hai, push end me add karta hai.</p>
+</div>
+
+
