@@ -21,3 +21,7 @@ variable_name['key'];
 // user[first_name]
 // let demo = "name"
 // user[demo] --> convert into name (demo = 'name') --> output: abc
+
+
+
+

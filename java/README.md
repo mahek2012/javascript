@@ -1109,4 +1109,250 @@ so they can be called before definition.
   <p>Why: shift first element nikalta hai, push end me add karta hai.</p>
 </div>
 
+<!-- Javascript Array Examples: -->
+<div>
+  <h1>Example 1: Double daily steps count</h1>
+  <p>Real life: Fitness app doubling step goal</p>
+  <p>const steps = [1000, 2000, 3000];</p>
+  <p>const newSteps = steps.map(step => step * 2);</p>
+  <p>Answer: [2000, 4000, 6000]</p>
+  <p>Why: map() har step ko 2 se multiply karke naya array banata hai.</p>
+</div>
 
+<div>
+  <h1>Example 2: Convert minutes to seconds</h1>
+  <p>Real life: Video duration calculation</p>
+  <p>const minutes = [1, 5, 10];</p>
+  <p>const seconds = minutes.map(min => min * 60);</p>
+  <p>Answer: [60, 300, 600]</p>
+  <p>Why: 1 minute = 60 seconds, map() har value convert karta hai.</p>
+</div>
+
+<div>
+  <h1>Example 3: Add ₹50 delivery charge</h1>
+  <p>Real life: Food delivery app</p>
+  <p>const prices = [200, 350, 500];</p>
+  <p>const finalPrices = prices.map(price => price + 50);</p>
+  <p>Answer: [250, 400, 550]</p>
+  <p>Why: map() har price me ₹50 add karta hai.</p>
+</div>
+
+<div>
+  <h1>Example 4: Convert exam marks to grades</h1>
+  <p>Real life: Result system</p>
+  <p>const marks = [35, 72, 88, 40];</p>
+  <p>const grades = marks.map(mark => mark &gt;= 40 ? 'Pass' : 'Fail');</p>
+  <p>Answer: ['Fail', 'Pass', 'Pass', 'Pass']</p>
+  <p>Why: Condition ke basis par map() Pass ya Fail return karta hai.</p>
+</div>
+
+<div>
+  <h1>Example 5: Capitalize names</h1>
+  <p>Real life: Display usernames properly</p>
+  <p>const names = ['rahul', 'neha', 'amit'];</p>
+  <p>const formattedNames = names.map(name => name[0].toUpperCase() + name.slice(1));</p>
+  <p>Answer: ['Rahul', 'Neha', 'Amit']</p>
+  <p>Why: map() har name ka first letter capital karta hai.</p>
+</div>
+
+<div>
+  <h1>Example 6: Apply 10% discount</h1>
+  <p>Real life: Shopping sale</p>
+  <p>const prices = [500, 1000, 1500];</p>
+  <p>const discounted = prices.map(price => price - price * 0.10);</p>
+  <p>Answer: [450, 900, 1350]</p>
+  <p>Why: map() har price par 10% discount apply karta hai.</p>
+</div>
+
+<div>
+  <h1>Example 7: Add bonus points</h1>
+  <p>Real life: Game scoring system</p>
+  <p>const scores = [45, 60, 85];</p>
+  <p>const finalScores = scores.map(score => score &gt;= 80 ? score + 20 : score &gt;= 50 ? score + 10 : score);</p>
+  <p>Answer: [45, 70, 105]</p>
+  <p>Why: Score ke range ke according bonus add hota hai.</p>
+</div>
+
+<div>
+  <h1>Example 8: Convert Celsius to Fahrenheit</h1>
+  <p>Real life: Weather app</p>
+  <p>const celsius = [0, 20, 30];</p>
+  <p>const fahrenheit = celsius.map(temp => (temp * 9/5) + 32);</p>
+  <p>Answer: [32, 68, 86]</p>
+  <p>Why: Formula use karke map() temperature convert karta hai.</p>
+</div>
+
+<div>
+  <h1>Example 9: Generate table of 2</h1>
+  <p>Real life: Math learning app</p>
+  <p>const numbers = [1, 2, 3, 4];</p>
+  <p>const tableOfTwo = numbers.map(num => num * 2);</p>
+  <p>Answer: [2, 4, 6, 8]</p>
+  <p>Why: map() har number ko 2 se multiply karta hai.</p>
+</div>
+
+<div>
+  <h1>Example 10: Balance message formatting</h1>
+  <p>Real life: SMS notification system</p>
+  <p>const balances = [500, 1200, 300];</p>
+  <p>const messages = balances.map(balance => `Your balance is ₹${balance}`);</p>
+  <p>Answer: ['Your balance is ₹500', 'Your balance is ₹1200', 'Your balance is ₹300']</p>
+  <p>Why: map() string template ke saath message generate karta hai.</p>
+</div>
+
+<!-- JavaScript .filter() Method Example: -->
+<div>
+  <h1>Example 1: Get even numbers</h1>
+  <p>Find even roll numbers</p>
+  <p>const numbers = [1, 2, 3, 4, 5, 6];</p>
+  <p>const evenNumbers = numbers.filter(num => num % 2 === 0);</p>
+  <p>Answer or Error: [2, 4, 6]</p>
+  <p>Why: filter() sirf wahi numbers return karta hai jo even condition satisfy karte hain.</p>
+</div>
+
+<div>
+  <h1>Example 2: Filter adults</h1>
+  <p>Allow only adult users</p>
+  <p>const ages = [2, 1, 10, 16, 5];</p>
+  <p>const adults = ages.filter(age => age >= 18);</p>
+  <p>Answer or Error: []</p>
+  <p>Why: Koi bhi age 18 ya usse zyada nahi hai.</p>
+</div>
+
+<div>
+  <h1>Example 3: Remove empty items</h1>
+  <p>Clean user input</p>
+  <p>const inputs = ['Hello', '', 'World', '', 'JS'];</p>
+  <p>const validInputs = inputs.filter(text => text !== '');</p>
+  <p>Answer or Error: ['Hello', 'World', 'JS']</p>
+  <p>Why: Empty strings filter ho jaati hain.</p>
+</div>
+
+<div>
+  <h1>Example 4: Filter passing marks</h1>
+  <p>Exam result system</p>
+  <p>const marks = [35, 72, 88, 40, 25];</p>
+  <p>const passedStudents = marks.filter(mark => mark >= 40);</p>
+  <p>Answer or Error: [72, 88, 40]</p>
+  <p>Why: Sirf 40 ya usse zyada marks wale select hote hain.</p>
+</div>
+
+<div>
+  <h1>Example 5: Get affordable prices</h1>
+  <p>Shopping app price filter</p>
+  <p>const prices = [199, 499, 999, 1499, 299];</p>
+  <p>const affordable = prices.filter(price => price <= 500);</p>
+  <p>Answer or Error: [199, 499, 299]</p>
+  <p>Why: ₹500 se kam ya barabar prices filter hoti hain.</p>
+</div>
+
+<div>
+  <h1>Example 6: Filter long words</h1>
+  <p>Search keyword validation</p>
+  <p>const words = ['hi', 'hello', 'javascript', 'ok'];</p>
+  <p>const longWords = words.filter(word => word.length > 3);</p>
+  <p>Answer or Error: ['hello', 'javascript']</p>
+  <p>Why: 3 se zyada length wale words select hote hain.</p>
+</div>
+
+<div>
+  <h1>Example 7: Filter positive numbers</h1>
+  <p>Bank transaction validation</p>
+  <p>const transactions = [200, -100, 500, -50, 300];</p>
+  <p>const credits = transactions.filter(amount => amount > 0);</p>
+  <p>Answer or Error: [200, 500, 300]</p>
+  <p>Why: Sirf positive amounts allow kiye gaye hain.</p>
+</div>
+
+<div>
+  <h1>Example 8: Filter numbers within a range</h1>
+  <p>Score selection</p>
+  <p>const scores = [45, 60, 85, 30, 90];</p>
+  <p>const selectedScores = scores.filter(score => score >= 50 && score <= 90);</p>
+  <p>Answer or Error: [60, 85, 90]</p>
+  <p>Why: Range condition ke andar wale scores hi milte hain.</p>
+</div>
+
+
+<!-- JavaScript .reduce() Method Example: -->
+
+<div>
+  <h1>Example 1: Total money in wallet</h1>
+  <p>Add all cash amounts</p>
+  <p>const money = [100, 200, 50];</p>
+  <p>const totalMoney = money.reduce((sum, amount) => sum + amount, 0);</p>
+  <p>Answer or Error: 350</p>
+  <p>Why: reduce() har amount ko sum me add karta hai.</p>
+</div>
+
+<div>
+  <h1>Example 2: Total steps walked in a week</h1>
+  <p>Fitness tracker</p>
+  <p>const steps = [3000, 5000, 4000, 6000];</p>
+  <p>const weeklySteps = steps.reduce((total, step) => total + step, 0);</p>
+  <p>Answer or Error: 18000</p>
+  <p>Why: Sabhi daily steps ko ek total me joda gaya hai.</p>
+</div>
+
+<div>
+  <h1>Example 3: Find total cart price</h1>
+  <p>Shopping bill</p>
+  <p>const prices = [499, 299, 199];</p>
+  <p>const totalPrice = prices.reduce((total, price) => total + price, 0);</p>
+  <p>Answer or Error: 997</p>
+  <p>Why: reduce() prices ka total nikalta hai.</p>
+</div>
+
+<div>
+  <h1>Example 4: Find maximum score</h1>
+  <p>Highest exam mark</p>
+  <p>const marks = [45, 88, 67, 92];</p>
+  <p>const highest = marks.reduce((max, mark) => mark > max ? mark : max);</p>
+  <p>Answer or Error: 92</p>
+  <p>Why: Har value ko compare karke sabse bada number return hota hai.</p>
+</div>
+
+<div>
+  <h1>Example 5: Count total characters</h1>
+  <p>Text length calculation</p>
+  <p>const words = ['Hi', 'Hello', 'JS'];</p>
+  <p>const totalChars = words.reduce((count, word) => count + word.length, 0);</p>
+  <p>Answer or Error: 9</p>
+  <p>Why: Har word ki length ko add kiya gaya hai.</p>
+</div>
+
+<div>
+  <h1>Example 6: Combine words into a sentence</h1>
+  <p>Message builder</p>
+  <p>const words = ['Learning', 'JavaScript', 'is', 'fun'];</p>
+  <p>const sentence = words.reduce((text, word) => text + ' ' + word);</p>
+  <p>Answer or Error: Learning JavaScript is fun</p>
+  <p>Why: reduce() words ko ek string me combine karta hai.</p>
+</div>
+
+<div>
+  <h1>Example 7: Count passed students</h1>
+  <p>Result summary</p>
+  <p>const marks = [35, 72, 88, 40, 25];</p>
+  <p>const passCount = marks.reduce((count, mark) => mark >= 40 ? count + 1 : count, 0);</p>
+  <p>Answer or Error: 3</p>
+  <p>Why: Sirf pass marks par count increase hota hai.</p>
+</div>
+
+<div>
+  <h1>Example 8: Calculate final balance</h1>
+  <p>Bank account calculation</p>
+  <p>const transactions = [1000, -200, -300, 500];</p>
+  <p>const finalBalance = transactions.reduce((balance, amount) => balance + amount, 0);</p>
+  <p>Answer or Error: 1000</p>
+  <p>Why: Credits aur debits ko add karke final balance milta hai.</p>
+</div>
+
+<div>
+  <h1>Example 9: Build comma-separated string</h1>
+  <p>Display values in UI</p>
+  <p>const items = ['Pen', 'Book', 'Pencil'];</p>
+  <p>const result = items.reduce((text, item) => text + ', ' + item);</p>
+  <p>Answer or Error: Pen, Book, Pencil</p>
+  <p>Why: reduce() array ko ek string me convert karta hai.</p>
+</div>
