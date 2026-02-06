@@ -534,3 +534,105 @@ console.log('Final balance:', finalBalance); // 1000
 const items = ['Pen', 'Book', 'Pencil'];
 const result = items.reduce((text, item) => text + ', ' + item);
 console.log('Comma-separated items:', result); // "Pen, Book, Pencil"
+
+
+
+// ===============================
+// MAP + FILTER + REDUCE PRACTICE
+// ===============================
+
+// Q1. Shopping App – Discounted Total
+const prices4 = [200, 800, 1200, 450, 700];
+const total1 = prices4
+  .filter(price => price > 500)
+  .map(price => price * 0.9)
+  .reduce((sum, price) => sum + price, 0);
+console.log('Q1 - Total to pay:', total1); // 2430
+
+// --------------------------------------------------
+
+// Q2. Fitness App – Total Active Minutes
+const minutes1 = [20, 45, 60, 15, 90];
+const totalCalories = minutes1
+  .filter(min => min > 30)
+  .map(min => min * 5)
+  .reduce((total, cal) => total + cal, 0);
+console.log('Q2 - Total calories burned:', totalCalories); // 975
+
+// --------------------------------------------------
+
+// Q3. Exam System – Average of Passed Marks
+const marks2 = [35, 72, 88, 40, 25, 90];
+const passed = marks2.filter(mark => mark >= 40);
+const averagePassed = passed.reduce((sum, mark) => sum + mark, 0) / passed.length;
+console.log('Q3 - Average of passed marks:', averagePassed); // 72.5
+
+// --------------------------------------------------
+
+// Q4. Salary System – Monthly Payout
+const wages = [300, 800, 450, 1000, 600];
+const totalPayout = wages
+  .filter(wage => wage > 500)
+  .map(wage => wage + 100)
+  .reduce((total, wage) => total + wage, 0);
+console.log('Q4 - Total payout:', totalPayout); // 2600
+
+// --------------------------------------------------
+
+// Q5. Online Course – Completion Points
+const progress = [20, 50, 75, 40, 100];
+const totalPoints = progress
+  .filter(p => p >= 50)
+  .map(p => p * 2)
+  .reduce((sum, p) => sum + p, 0);
+console.log('Q5 - Total points:', totalPoints); // 450
+
+// --------------------------------------------------
+
+// Q6. Bank Transactions – Final Balance
+const transactions1 = [1000, -500, 2000, -300, 1500];
+const creditedAmount = transactions1
+  .filter(amount => amount > 0)
+  .map(amount => amount * 1.02)
+  .reduce((total, amount) => total + amount, 0);
+console.log('Q6 - Final credited amount:', creditedAmount); // 4590
+
+// --------------------------------------------------
+
+// Q7. Game App – Final Score
+const scores1 = [30, 60, 90, 45, 80];
+const finalScore = scores1
+  .filter(score => score > 50)
+  .map(score => score + 10)
+  .reduce((sum, score) => sum + score, 0);
+console.log('Q7 - Final score:', finalScore); // 250
+
+// --------------------------------------------------
+
+// Q8. E-commerce – Total Taxed Amount
+const prices3 = [500, 1200, 3000, 800, 1500];
+const finalAmount = prices3
+  .filter(price => price > 1000)
+  .map(price => price * 1.18)
+  .reduce((sum, price) => sum + price, 0);
+console.log('Q8 - Final payable amount:', finalAmount); // 6746
+
+// --------------------------------------------------
+
+// Q9. Attendance System – Reward Points
+const hours = [6, 8, 9, 7, 10];
+const rewardPoints = hours
+  .filter(hour => hour >= 8)
+  .map(hour => hour * 10)
+  .reduce((sum, point) => sum + point, 0);
+console.log('Q9 - Total reward points:', rewardPoints); // 270
+
+// --------------------------------------------------
+
+// Q10. Interview Brain Teaser ⭐
+const nu = [1, 2, 3, 4, 5, 6];
+const sumOfSquares = nu
+  .filter(num => num % 2 === 0)
+  .map(num => num * num)
+  .reduce((sum, num) => sum + num, 0);
+console.log('Q10 - Sum of squares of even numbers:', sumOfSquares); // 56

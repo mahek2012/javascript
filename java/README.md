@@ -1356,3 +1356,86 @@ so they can be called before definition.
   <p>Answer or Error: Pen, Book, Pencil</p>
   <p>Why: reduce() array ko ek string me convert karta hai.</p>
 </div>
+
+<!-- JavaScript .Map, .Filter() and .reduce() Method Examples: -->
+
+<div>
+  <h1>Example 1: Shopping App – Discounted Total</h1>
+  <p>const prices = [200, 800, 1200, 450, 700];</p>
+  <p>const total = prices.filter(price => price > 500).map(price => price * 0.9).reduce((sum, price) => sum + price, 0);</p>
+  <p>Answer or Error: 2430</p>
+  <p>Why: Pehle 500 se upar prices filter hue, phir 10% discount laga aur end me total nikala.</p>
+</div>
+
+<div>
+  <h1>Example 2: Fitness App – Total Active Minutes</h1>
+  <p>const minutes = [20, 45, 60, 15, 90];</p>
+  <p>const totalCalories = minutes.filter(min => min > 30).map(min => min * 5).reduce((total, cal) => total + cal, 0);</p>
+  <p>Answer or Error: 975</p>
+  <p>Why: 30 se zyada minutes wale days select hue, calories me convert hue aur total add hua.</p>
+</div>
+
+<div>
+  <h1>Example 3: Exam System – Average of Passed Marks</h1>
+  <p>const marks = [35, 72, 88, 40, 25, 90];</p>
+  <p>const passed = marks.filter(mark => mark >= 40);</p>
+  <p>const average = passed.reduce((sum, mark) => sum + mark, 0) / passed.length;</p>
+  <p>Answer or Error: 72.5</p>
+  <p>Why: Sirf passing marks liye gaye aur unka average nikala.</p>
+</div>
+
+<div>
+  <h1>Example 4: Salary System – Monthly Payout</h1>
+  <p>const wages = [300, 800, 450, 1000, 600];</p>
+  <p>const totalPayout = wages.filter(wage => wage > 500).map(wage => wage + 100).reduce((total, wage) => total + wage, 0);</p>
+  <p>Answer or Error: 2700</p>
+  <p>Why: 500 se zyada wages par bonus add karke total payout nikala.</p>
+</div>
+
+<div>
+  <h1>Example 5: Online Course – Completion Points</h1>
+  <p>const progress = [20, 50, 75, 40, 100];</p>
+  <p>const totalPoints = progress.filter(p => p >= 50).map(p => p * 2).reduce((sum, p) => sum + p, 0);</p>
+  <p>Answer or Error: 450</p>
+  <p>Why: Completed lessons ko points me convert karke total nikala.</p>
+</div>
+
+<div>
+  <h1>Example 6: Bank Transactions – Final Balance</h1>
+  <p>const transactions = [1000, -500, 2000, -300, 1500];</p>
+  <p>const creditedAmount = transactions.filter(amount => amount > 0).map(amount => amount * 1.02).reduce((total, amount) => total + amount, 0);</p>
+  <p>Answer or Error: 4590</p>
+  <p>Why: Sirf credit transactions par interest add karke total calculate hua.</p>
+</div>
+
+<div>
+  <h1>Example 7: Game App – Final Score</h1>
+  <p>const scores = [30, 60, 90, 45, 80];</p>
+  <p>const finalScore = scores.filter(score => score > 50).map(score => score + 10).reduce((sum, score) => sum + score, 0);</p>
+  <p>Answer or Error: 270</p>
+  <p>Why: 50 se upar scores par bonus add karke sum nikala.</p>
+</div>
+
+<div>
+  <h1>Example 8: E-commerce – Total Taxed Amount</h1>
+  <p>const prices = [500, 1200, 3000, 800, 1500];</p>
+  <p>const finalAmount = prices.filter(price => price > 1000).map(price => price * 1.18).reduce((sum, price) => sum + price, 0);</p>
+  <p>Answer or Error: 6724</p>
+  <p>Why: 1000 se upar items par tax add karke final amount nikala.</p>
+</div>
+
+<div>
+  <h1>Example 9: Attendance System – Reward Points</h1>
+  <p>const hours = [6, 8, 9, 7, 10];</p>
+  <p>const totalPoints = hours.filter(hour => hour >= 8).map(hour => hour * 10).reduce((sum, point) => sum + point, 0);</p>
+  <p>Answer or Error: 270</p>
+  <p>Why: 8 ya usse zyada hours par points calculate hue aur total hua.</p>
+</div>
+
+<div>
+  <h1>Example 10: Interview Brain Teaser</h1>
+  <p>const numbers = [1, 2, 3, 4, 5, 6];</p>
+  <p>const sumOfSquares = numbers.filter(num => num % 2 === 0).map(num => num * num).reduce((sum, num) => sum + num, 0);</p>
+  <p>Answer or Error: 56</p>
+  <p>Why: Even numbers ke squares ka sum nikala gaya.</p>
+</div>
