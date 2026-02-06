@@ -1439,3 +1439,167 @@ so they can be called before definition.
   <p>Answer or Error: 56</p>
   <p>Why: Even numbers ke squares ka sum nikala gaya.</p>
 </div>
+
+
+<!-- JavaScript Question for .Map(), .filter() and .reduce() -->
+
+<div>
+  <h1>Example 1: Grocery Store – Total Cost</h1>
+  <p>const prices = [50, 120, 300, 80, 200];</p>
+  <p>const totalCost = prices.filter(p => p > 100).map(p => p * 1.05).reduce((s, p) => s + p, 0);</p>
+  <p>Answer or Error: 651</p>
+  <p>Why: 100 se zyada items par 5% tax lagakar total nikala.</p>
+</div>
+
+<div>
+  <h1>Example 2: Fitness App – Weekly Calories</h1>
+  <p>const minutes = [10, 25, 40, 15, 60];</p>
+  <p>const totalCalories = minutes.filter(m => m >= 20).map(m => m * 4).reduce((s, c) => s + c, 0);</p>
+  <p>Answer or Error: 500</p>
+  <p>Why: 20+ minutes wale days ko calories me convert kiya.</p>
+</div>
+
+<div>
+  <h1>Example 3: Exam Results – Total Passed Marks</h1>
+  <p>const marks = [35, 55, 80, 20, 45];</p>
+  <p>const totalMarks = marks.filter(m => m >= 40).reduce((s, m) => s + m, 0);</p>
+  <p>Answer or Error: 180</p>
+  <p>Why: Sirf passing marks ka sum liya gaya.</p>
+</div>
+
+<div>
+  <h1>Example 4: Bank App – Total Credits</h1>
+  <p>const transactions = [500, -200, 1000, -300, 700];</p>
+  <p>const totalCredit = transactions.filter(t => t > 0).reduce((s, t) => s + t, 0);</p>
+  <p>Answer or Error: 2200</p>
+  <p>Why: Sirf positive transactions add hue.</p>
+</div>
+
+<div>
+  <h1>Example 5: Online Sale – Discounted Bill</h1>
+  <p>const prices = [800, 1500, 3000, 600, 1200];</p>
+  <p>const totalBill = prices.filter(p => p > 1000).map(p => p * 0.85).reduce((s, p) => s + p, 0);</p>
+  <p>Answer or Error: 4760</p>
+  <p>Why: 1000 se upar items par 15% discount laga.</p>
+</div>
+
+<div>
+  <h1>Example 6: Attendance – Reward Points</h1>
+  <p>const hours = [5, 7, 8, 6, 9];</p>
+  <p>const totalPoints = hours.filter(h => h >= 7).map(h => h * 10).reduce((s, p) => s + p, 0);</p>
+  <p>Answer or Error: 240</p>
+  <p>Why: 7+ hours ko points me convert kiya.</p>
+</div>
+
+<div>
+  <h1>Example 7: Delivery App – Total Distance</h1>
+  <p>const distances = [3, 6, 10, 4, 8];</p>
+  <p>const totalDistance = distances.filter(d => d > 5).map(d => d + 1).reduce((s, d) => s + d, 0);</p>
+  <p>Answer or Error: 27</p>
+  <p>Why: 5 km se zyada trips me bonus add hua.</p>
+</div>
+
+<div>
+  <h1>Example 8: Salary System – Final Salary</h1>
+  <p>const salaries = [18000, 25000, 30000, 15000];</p>
+  <p>const totalSalary = salaries.filter(s => s > 20000).map(s => s + 2000).reduce((t, s) => t + s, 0);</p>
+  <p>Answer or Error: 59000</p>
+  <p>Why: Eligible salaries me bonus add karke total.</p>
+</div>
+
+<div>
+  <h1>Example 9: Study App – Total Study Time</h1>
+  <p>const hours = [0.5, 1.5, 2, 0.75, 3];</p>
+  <p>const totalMinutes = hours.filter(h => h > 1).map(h => h * 60).reduce((s, m) => s + m, 0);</p>
+  <p>Answer or Error: 390</p>
+  <p>Why: 1 ghante se zyada sessions ko minutes me badla.</p>
+</div>
+
+<div>
+  <h1>Example 10: Electricity Usage – Monthly Bill</h1>
+  <p>const units = [80, 120, 200, 90, 150];</p>
+  <p>const totalBill = units.filter(u => u > 100).map(u => u * 6).reduce((s, b) => s + b, 0);</p>
+  <p>Answer or Error: 2820</p>
+  <p>Why: 100 se upar units ka bill calculate hua.</p>
+</div>
+
+<div>
+  <h1>Example 11: Game Scores – Final Power Score</h1>
+  <p>const scores = [30, 50, 90, 20, 70];</p>
+  <p>const powerScore = scores.filter(s => s > 40).map(s => s * 2).reduce((t, s) => t + s, 0);</p>
+  <p>Answer or Error: 420</p>
+  <p>Why: High scores double karke sum hue.</p>
+</div>
+
+<div>
+  <h1>Example 12: Travel App – Total Fare</h1>
+  <p>const rides = [5, 12, 20, 8, 15];</p>
+  <p>const totalFare = rides.filter(r => r > 10).map(r => r + 50).reduce((s, r) => s + r, 0);</p>
+  <p>Answer or Error: 147</p>
+  <p>Why: Long rides me service fee add hui.</p>
+</div>
+
+<div>
+  <h1>Example 13: Office Work – Productive Hours</h1>
+  <p>const hours = [4, 6, 8, 5, 9];</p>
+  <p>const productiveMinutes = hours.filter(h => h >= 6).map(h => h * 60).reduce((s, m) => s + m, 0);</p>
+  <p>Answer or Error: 1380</p>
+  <p>Why: 6+ hours ko minutes me convert kiya.</p>
+</div>
+
+<div>
+  <h1>Example 14: Shopping Cart – Reward Coins</h1>
+  <p>const purchases = [300, 800, 1200, 400];</p>
+  <p>const coins = purchases.filter(p => p > 500).map(p => 10).reduce((s, c) => s + c, 0);</p>
+  <p>Answer or Error: 20</p>
+  <p>Why: Har eligible purchase par 10 coins mile.</p>
+</div>
+
+<div>
+  <h1>Example 15: Fuel App – Total Fuel Cost</h1>
+  <p>const liters = [3, 6, 10, 4, 8];</p>
+  <p>const totalFuelCost = liters.filter(l => l > 5).map(l => l * 105).reduce((s, c) => s + c, 0);</p>
+  <p>Answer or Error: 2520</p>
+  <p>Why: 5 se zyada liters ka total cost nikla.</p>
+</div>
+
+<div>
+  <h1>Example 16: Interview Classic – Sum of Cubes</h1>
+  <p>const numbers = [1, 2, 3, 4, 5];</p>
+  <p>const sumCubes = numbers.filter(n => n % 2 !== 0).map(n => n ** 3).reduce((s, n) => s + n, 0);</p>
+  <p>Answer or Error: 153</p>
+  <p>Why: Odd numbers ke cubes ka sum.</p>
+</div>
+
+<div>
+  <h1>Example 17: Performance Tracking – Bonus Points</h1>
+  <p>const scores = [10, 20, 30, 40, 50];</p>
+  <p>const avg = scores.reduce((s, n) => s + n, 0) / scores.length;</p>
+  <p>const totalScore = scores.filter(s => s > avg).map(s => s + 5).reduce((t, s) => t + s, 0);</p>
+  <p>Answer or Error: 100</p>
+  <p>Why: Average se upar scores me bonus add hua.</p>
+</div>
+
+<div>
+  <h1>Example 18: Subscription App – Final Bill</h1>
+  <p>const plans = [199, 399, 599, 299];</p>
+  <p>const finalBill = plans.filter(p => p > 300).map(p => p * 1.18).reduce((s, p) => s + p, 0);</p>
+  <p>Answer or Error: 1180.82</p>
+  <p>Why: 300 se upar plans par tax add hua.</p>
+</div>
+
+<div>
+  <h1>Example 19: Learning App – Achievement Score</h1>
+  <p>const scores = [45, 60, 70, 30, 80];</p>
+  <p>const totalScore = scores.filter(s => s >= 60).map(s => s * s).reduce((t, s) => t + s, 0);</p>
+  <p>Answer or Error: 14900</p>
+  <p>Why: Eligible scores ke squares ka sum.</p>
+</div>
+
+<div>
+  <h1>Example 20: Interview Finisher</h1>
+  <p>const numbers = [3, 6, 9, 10, 12];</p>
+  <p>const finalSum = numbers.filter(n => n % 3 === 0).map(n => n * 10).reduce((s, n) => s + n, 0);</p>
+  <p>Answer or Error: 300</p>
+  <p>Why: 3 se divisible numbers ka final sum.</p>
+</div>

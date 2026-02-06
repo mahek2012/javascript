@@ -636,3 +636,204 @@ const sumOfSquares = nu
   .map(num => num * num)
   .reduce((sum, num) => sum + num, 0);
 console.log('Q10 - Sum of squares of even numbers:', sumOfSquares); // 56
+
+// ===============================
+// MAP + FILTER + REDUCE – 20 PRACTICE
+// ===============================
+
+// Q1. Grocery Store – Total Cost
+const prices5 = [50, 120, 300, 80, 200];
+const totalCost = prices5
+  .filter(p => p > 100)
+  .map(p => p * 1.05)
+  .reduce((sum, p) => sum + p, 0);
+console.log('Q1 - Total cost:', totalCost); // 735
+
+// --------------------------------------------------
+
+// Q2. Fitness App – Weekly Calories
+const minutes2 = [10, 25, 40, 15, 60];
+const totalCalories2 = minutes2
+  .filter(min => min >= 20)
+  .map(min => min * 4)
+  .reduce((sum, cal) => sum + cal, 0);
+console.log('Q2 - Total calories:', totalCalories2); // 520
+
+// --------------------------------------------------
+
+// Q3. Exam Results – Total Passed Marks
+const marks3 = [35, 55, 80, 20, 45];
+const totalPassedMarks = marks3
+  .filter(mark => mark >= 40)
+  .reduce((sum, mark) => sum + mark, 0);
+console.log('Q3 - Total passed marks:', totalPassedMarks); // 180
+
+// --------------------------------------------------
+
+// Q4. Bank App – Total Credits
+const transactions4 = [500, -200, 1000, -300, 700];
+const totalCredits = transactions4
+  .filter(t => t > 0)
+  .reduce((sum, t) => sum + t, 0);
+console.log('Q4 - Total credits:', totalCredits); // 2200
+
+// --------------------------------------------------
+
+// Q5. Online Sale – Discounted Bill
+const prices6 = [800, 1500, 3000, 600, 1200];
+const totalPayable = prices6
+  .filter(p => p > 1000)
+  .map(p => p * 0.85)
+  .reduce((sum, p) => sum + p, 0);
+console.log('Q5 - Total payable amount:', totalPayable); // 5100
+
+// --------------------------------------------------
+
+// Q6. Attendance – Reward Points
+const hours6 = [5, 7, 8, 6, 9];
+const totalPoints6 = hours6
+  .filter(h => h >= 7)
+  .map(h => h * 10)
+  .reduce((sum, p) => sum + p, 0);
+console.log('Q6 - Total reward points:', totalPoints6); // 240
+
+// --------------------------------------------------
+
+// Q7. Delivery App – Total Distance
+const distances7 = [3, 6, 10, 4, 8];
+const totalDistance7 = distances7
+  .filter(d => d > 5)
+  .map(d => d + 1)
+  .reduce((sum, d) => sum + d, 0);
+console.log('Q7 - Total distance:', totalDistance7); // 26
+
+// --------------------------------------------------
+
+// Q8. Salary System – Final Salary
+const salaries8 = [18000, 25000, 30000, 15000];
+const totalSalary = salaries8
+  .filter(s => s > 20000)
+  .map(s => s + 2000)
+  .reduce((sum, s) => sum + s, 0);
+console.log('Q8 - Total salary payout:', totalSalary); // 59000
+
+// --------------------------------------------------
+
+// Q9. Study App – Total Study Time
+const hours9 = [0.5, 1.5, 2, 0.75, 3];
+const totalStudyMinutes = hours9
+  .filter(h => h > 1)
+  .map(h => h * 60)
+  .reduce((sum, m) => sum + m, 0);
+console.log('Q9 - Total study minutes:', totalStudyMinutes); // 390
+
+// --------------------------------------------------
+
+// Q10. Electricity Usage – Monthly Bill
+const units10 = [80, 120, 200, 90, 150];
+const totalBill = units10
+  .filter(u => u > 100)
+  .map(u => u * 6)
+  .reduce((sum, b) => sum + b, 0);
+console.log('Q10 - Total electricity bill:', totalBill); // 2820
+
+// --------------------------------------------------
+
+// Q11. Game Scores – Final Power Score
+const scores11 = [30, 50, 90, 20, 70];
+const totalPowerScore = scores11
+  .filter(s => s > 40)
+  .map(s => s * 2)
+  .reduce((sum, s) => sum + s, 0);
+console.log('Q11 - Total power score:', totalPowerScore); // 420
+
+// --------------------------------------------------
+
+// Q12. Travel App – Total Fare
+const rides12 = [5, 12, 20, 8, 15];
+const totalFare = rides12
+  .filter(r => r > 10)
+  .map(r => r + 50)
+  .reduce((sum, r) => sum + r, 0);
+console.log('Q12 - Total fare:', totalFare); // 147
+
+// --------------------------------------------------
+
+// Q13. Office Work – Productive Hours
+const hours13 = [4, 6, 8, 5, 9];
+const totalProductiveMinutes = hours13
+  .filter(h => h >= 6)
+  .map(h => h * 60)
+  .reduce((sum, m) => sum + m, 0);
+console.log('Q13 - Total productive minutes:', totalProductiveMinutes); // 1260
+
+// --------------------------------------------------
+
+// Q14. Shopping Cart – Reward Coins
+const purchases14 = [300, 800, 1200, 400];
+const totalCoins = purchases14
+  .filter(p => p > 500)
+  .map(p => 10)
+  .reduce((sum, c) => sum + c, 0);
+console.log('Q14 - Total coins earned:', totalCoins); // 20
+
+// --------------------------------------------------
+
+// Q15. Fuel App – Total Fuel Cost
+const liters15 = [3, 6, 10, 4, 8];
+const totalFuelCost = liters15
+  .filter(l => l > 5)
+  .map(l => l * 105)
+  .reduce((sum, cost) => sum + cost, 0);
+console.log('Q15 - Total fuel cost:', totalFuelCost); // 2940
+
+// --------------------------------------------------
+
+// Q16. Interview Classic – Sum of Cubes
+const numbers16 = [1, 2, 3, 4, 5];
+const sumOfCubes = numbers16
+  .filter(n => n % 2 !== 0)
+  .map(n => n ** 3)
+  .reduce((sum, n) => sum + n, 0);
+console.log('Q16 - Sum of cubes of odd numbers:', sumOfCubes); // 153
+
+// --------------------------------------------------
+
+// Q17. Performance Tracking – Bonus Points
+const scores17 = [10, 20, 30, 40, 50];
+const average17 = scores17.reduce((sum, s) => sum + s, 0) / scores17.length;
+const totalBonusScore = scores17
+  .filter(s => s > average17)
+  .map(s => s + 5)
+  .reduce((sum, s) => sum + s, 0);
+console.log('Q17 - Total score with bonus:', totalBonusScore); // 110
+
+// --------------------------------------------------
+
+// Q18. Subscription App – Final Bill
+const plans18 = [199, 399, 599, 299];
+const totalBill18 = plans18
+  .filter(p => p > 300)
+  .map(p => p * 1.18)
+  .reduce((sum, p) => sum + p, 0);
+console.log('Q18 - Final subscription bill:', totalBill18); // 1181.18
+
+// --------------------------------------------------
+
+// Q19. Learning App – Achievement Score
+const scores19 = [45, 60, 70, 30, 80];
+const totalAchievementScore = scores19
+  .filter(s => s >= 60)
+  .map(s => s ** 2)
+  .reduce((sum, s) => sum + s, 0);
+console.log('Q19 - Total achievement score:', totalAchievementScore); // 15800
+
+// --------------------------------------------------
+
+// Q20. Interview Finisher ⭐
+const numbers20 = [3, 6, 9, 10, 12];
+const totalSum20 = numbers20
+  .filter(n => n % 3 === 0)
+  .map(n => n * 10)
+  .reduce((sum, n) => sum + n, 0);
+console.log('Q20 - Total sum:', totalSum20); // 300
