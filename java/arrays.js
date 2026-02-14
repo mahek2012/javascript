@@ -201,639 +201,978 @@
 
 
 // // Example 22: Chained methods
-// let arr4 = [1, 2, 3];
-// arr4.push(arr4.shift());
+// // let arr4 = [1, 2, 3];
+// // arr4.push(arr4.shift());
 
-// //use case -- sort product price low to high
-// let arr9 = [10, 2, 5, 20, 30]
-// let sort_var = arr9.sort(function(a,b){
-//  return a-b; // ascending order
+// // //use case -- sort product price low to high
+// // let arr9 = [10, 2, 5, 20, 30]
+// // let sort_var = arr9.sort(function(a,b){
+// //  return a-b; // ascending order
+// // });
+// // let arr0 = ['b', 'f', 'z', 'q', 'm', 'k']
+
+// // For Each Loop
+// // for Each --- Array ni darek value mate loop chalse
+// let i = [10, 35, 40, 68];
+
+// i.forEach((val) => {
+//   let new_val = val + 10;
+//   console.log(new_val);
 // });
-// let arr0 = ['b', 'f', 'z', 'q', 'm', 'k']
-
-// For Each Loop
-// for Each --- Array ni darek value mate loop chalse
-let i = [10, 35, 40, 68];
-
-i.forEach((val) => {
-  let new_val = val + 10;
-  console.log(new_val);
-});
-
-[5, 58, 42, "Hello"].forEach(val =>{
-  let new_arr = val + 2;
-  console.log(new_arr)
-})
-
-
-// .map() Method:
-// map tyare j use karvu ke jyare ek new array create karvo chhe
-// first map create a black array -- only for understanding
-let data = [10, 20, 50, 40, 15];
-// same like a for each loop but map return a new array
-let temp_data = data.map((val) => {
-  if (val > 20) {
-    return val;
-  }
-});
-
-// use case -- data ma thi specific data new array ma store karvo hoy
-// ex. product ma thi specific category na product new array ma store karva hoy
-// if you want to show only electronics producat on your homepage
-let marks = [10,5,20,25,15]
-let final_marks = marks.map((val) => {
-  if (val == 5){
-    return val + 4;
-  }
-  return val;
-})
-
-
-//filter 
-// filter tyare use karvu ke jyare ek new array create karvo chhe with condition 
-//in return true/false
-// if true --> add into new array
-//id else(false) --> not add into new array
-let laptops_price = [15000,20000,30000,65000,99000,45000];
-
-let expensive_laptops = laptops_price.filter((price) => {
-  if (price > 30000) return true;
-});
-// je value 30000 thi vadhare che te new array ma add thase and biji value ne array ma add nhi kare
-// use case -- data ma thi specific data new array ma store karvo hoy based on condition
-// ex. poduct ma thi specific price na producat new array ma store karva hoy
-// if you want to show only expensive producat on your homepage
-// if you want to filter producat based on price
-let product_type = ["Mobile", "Tablet", "Laptop","Mouse", "Keyborad"];
-
-let filter_product_type = product_type.filter((type)=> {
-  if (type === "Tablet" || type === "Mobile") return
-true;
-});
-
-
-// reduce
-// reduce tyare j use karvu ke jare ek single value calculate karvi hoy from array
-let total_price = [15, 68, 45, 58, 52, 48];
-
-let final_price = total_price.reduce((accumulator,
-val) => {
-  return accumulator + val;
-}, 0); // intial value of accumulator
-
-// 0 + 10 => 10
-// 10 + 10 => 20
-// 20 + 10 => 30
-// 30 + 10 => 40
-console.log("final Price:", final_price)
-//accumulator --> je value functipon ma return thase te accumulator ma store thase --> accumulator name change kari sako cho
-// val --> array ni darek value
-// use case -- data ma thi ek single value calculate karvi hoy
-//ex. product ma thi total price calculate karvi hoy
-
-// find
-// find tyare j use karvu ke jare array mathi ek value find karvi hoy based on condition
-// find() return kare chhe array no element --> callback no return value nahi
-// never returns what you return inside it
-// returns the array element itself
-// .find() stops at the first match
-// It does not continue looping
-
-let product = ["Laptop", "Mobile", "Tablet","Desktop", "Smart Watch"];
-let find_product = product.find( (item) => {
-  console.log("can't find product"); // not working
-// why??
-if (item === "Tablet") {
-  return true;
-} else if (item === "Mobile") {
-  return true;
-} else {
-  return false;
-}
-});  
-// use case -- data ma thi ek value find karvi hoy based on condition
-// ex. producat ma thi specific producat find karvo hoy based on name
-// find vs filter
-// Real-life Scenario: Shopping Mall Security
-// you are a security guard at a shopping mall
-// chack the list of visitors
-let people = ["John", "Sara", "Mike", "Anna","David", "Sara"];
-// find --> you are looking for the first person named "Sara" in the list and stop searching (Pehli var j male, bas e j and Anagal check j na kare)
-let person = people.find((name) => name === "Sara");
-console.log(person);
-
-// filter --> you want to find all visitors named "sara" in the list(all data check kare and list na end sudhi check kare)
-let AllSara = people.filter((name) => name === "Sara");
-console.log(AllSara);
-
-//exmple 2: Book bus for travel 
-
-// some
-// check kare chhe ke array ma koi pan ek item condition satisfy kare chhe ke nahi
-// condition true aave tyare stop kare
-// some() vs find() --> some() can't return you value its return true or false, find() return value of array
-// give ans in true and false
-let marks1 = [10, 20, 35, 90];
-let any = marks1.some(function (val) {
-  if (val > 85) return true;
-  // if (val < 85) return "need improvement";
-});
-// use case -- check if some producat are out of stock in your cart
-
-//every
-// check kare chhe ke array ma baddha j item condition satisfy kare chhe ke nahi
-// true -- baddha items condition match kare
-// false -- ek pan fail thay to
-let def = [20, 30, 40, 50];
-let num = def.every(function (val) {
-    return val < 60;
-});
-// use case --> check all student is pass or not
-// some(), find(), filter(), every()
-// let products = ["Tablet", "Mobile", "Laptop", "MoBile"]
-// method --> condition --> output
-// .some()   --> item === "Mobile"  --> true
-// .find()   --> item === "Mobile"  --> "Mobile"
-// .filter() --> item === "Mobile"  --> ["Mobile", "Mobile"]
-// .every()  --> item === "Mobile"  --> false
-
-// Destructuring operator -- give value to variable (ex. we don't use every time arr[1], just save it into variable let [ , k] = arr)
-let arr4 = [1, 2, 3, 4, 5];
-let [j, k] = arr4; // --> destructuring
-// let [j, , k] = arr;
-console.log(k);
-let temp_a = arr4[4]
-let temp_b = arr4[2]
-let temp_c = arr4[1]
-let user_data = ["text","text@gmail.com","Male","Surat"]
-
-// spread oprator -- copy value from main array
-let arr8 = [1, 2, 3, 4, 5, 6, 7];
-// let arr4 = arr3; // --> just give reference not
-// copy value(when you change into arr4 that will be
-// change arr3 too)
-let arr9 = [...arr8];
-// ... --> rest --> into function
-// ... --> spread --> into Array and Object
-
-
-
-
-// Example 1: Double daily steps count
-const steps = [1000, 2000, 3000];
-const newSteps = steps.map(step => step * 2);
-
-// Example 2: Convert minutes to seconds
-const minutes = [1, 5, 10];
-const seconds = minutes.map(min => min * 60);
-
-// Example 3: Add ₹50 delivery charge
-const prices1 = [200, 350, 500];
-const finalPrices = prices1.map(price => price + 50);
-
-// Example 4: Convert exam marks to grades
-const mark1 = [35, 72, 88, 40];
-const grades = mark1.map(mark => mark >= 40 ? 'Pass' : 'Fail');
-
-// Example 5: Capitalize names
-const names = ['rahul', 'neha', 'amit'];
-const formattedNames = names.map(name => name[0].toUpperCase() + name.slice(1));
-
-// Example 6: Apply 10% discount
-const prices2 = [500, 1000, 1500];
-const discounted = prices2.map(price => price - price * 0.10);
-
-// Example 7: Add bonus points to scores
-const scores = [45, 60, 85];
-const finalScores = scores.map(score => {
-  if (score >= 80) return score + 20;
-  if (score >= 50) return score + 10;
-  return score;
-});
-
-// Example 8: Convert Celsius to Fahrenheit
-const celsius = [0, 20, 30];
-const fahrenheit = celsius.map(temp => (temp * 9 / 5) + 32);
-
-// Example 9: Generate table of two
-const numbers = [1, 2, 3, 4];
-const tableOfTwo = numbers.map(num => num * 2);
-
-// Example 10: Format balance messages
-const balances = [500, 1200, 300];
-const messages = balances.map(balance => `Your balance is ₹${balance}`);
-
-
-
-
-// Example 1: Get even numbers
-const numbere = [1, 2, 3, 4, 5, 6];
-const evenNumbers = numbere.filter(num => num % 2 === 0);
-
-// Example 2: Filter adults
-const ages = [2, 1, 10, 16, 5];
-const adults = ages.filter(age => age >= 18);
-
-// Example 3: Remove empty items
-const inputs = ['Hello', '', 'World', '', 'JS'];
-const validInputs = inputs.filter(text => text !== '');
-
-// Example 4: Filter passing marks
-const marke = [35, 72, 88, 40, 25];
-const passedStudents = marke.filter(mark => mark >= 40);
-
-// Example 5: Get affordable prices
-const prices = [199, 499, 999, 1499, 299];
-const affordable = prices.filter(price => price <= 500);
-
-// Example 6: Filter long words
-const words = ['hi', 'hello', 'javascript', 'ok'];
-const longWords = words.filter(word => word.length > 3);
-
-// Example 7: Filter positive numbers
-const transactions = [200, -100, 500, -50, 300];
-const credits = transactions.filter(amount => amount > 0);
-
-// Example 8: Filter numbers within a range
-const scoree = [45, 60, 85, 30, 90];
-const selectedScores = scoree.filter(score => score >= 50 && score <= 90);
-
-// =======================
-// JAVASCRIPT REDUCE EXAMPLES
-// =======================
-
-// 1. Total money in wallet
-// Real life: Add all cash amounts
-const money = [100, 200, 50];
-const totalMoney = money.reduce((sum, amount) => sum + amount, 0);
-console.log('Total money:', totalMoney); // 350
-
-// --------------------------------------------------
-
-// 2. Total steps walked in a week
-// Real life: Fitness tracker
-const ste = [3000, 5000, 4000, 6000];
-function addSteps(total, step) {
-  return total + step;
-}
-const weeklySteps = steps.reduce(addSteps, 0);
-console.log('Weekly steps:', weeklySteps); // 18000
-
-// --------------------------------------------------
-
-// 3. Find total cart price
-// Real life: Shopping bill
-const price = [499, 299, 199];
-const totalPrice = price.reduce((total, price) => total + price, 0);
-console.log('Total cart price:', totalPrice); // 997
-
-// --------------------------------------------------
-
-// 4. Find maximum score
-// Real life: Highest exam mark
-const mar = [45, 88, 67, 92];
-const highest = mar.reduce((max, mark) => mark > max ? mark : max, marks[0]);
-console.log('Highest score:', highest); // 92
-
-// --------------------------------------------------
-
-// 5. Count total characters
-// Real life: Text length calculation
-const word = ['Hi', 'Hello', 'JS'];
-const totalChars = words.reduce((count, word) => count + word.length, 0);
-console.log('Total characters:', totalChars); // 9
-
-// --------------------------------------------------
-
-// 6. Combine words into a sentence
-// Real life: Message builder
-const wordsSentence = ['Learning', 'JavaScript', 'is', 'fun'];
-const sentence = wordsSentence.reduce((text, word) => text + ' ' + word);
-console.log('Sentence:', sentence); // "Learning JavaScript is fun"
-
-// --------------------------------------------------
-
-// 7. Count passed students
-// Real life: Result summary
-const examMarks = [35, 72, 88, 40, 25];
-const passCount = examMarks.reduce((count, mark) => mark >= 40 ? count + 1 : count, 0);
-console.log('Passed students:', passCount); // 3
-
-// --------------------------------------------------
-
-// 8. Calculate final balance
-// Real life: Bank account calculation
-const transaction = [1000, -200, -300, 500];
-const finalBalance = transaction.reduce((balance, amount) => balance + amount, 0);
-console.log('Final balance:', finalBalance); // 1000
-
-// --------------------------------------------------
-
-// 9. Build comma-separated string
-// Real life: Display values in UI
-const items = ['Pen', 'Book', 'Pencil'];
-const result = items.reduce((text, item) => text + ', ' + item);
-console.log('Comma-separated items:', result); // "Pen, Book, Pencil"
-
-
-
-// ===============================
-// MAP + FILTER + REDUCE PRACTICE
-// ===============================
-
-// Q1. Shopping App – Discounted Total
-const prices4 = [200, 800, 1200, 450, 700];
-const total1 = prices4
-  .filter(price => price > 500)
-  .map(price => price * 0.9)
-  .reduce((sum, price) => sum + price, 0);
-console.log('Q1 - Total to pay:', total1); // 2430
-
-// --------------------------------------------------
-
-// Q2. Fitness App – Total Active Minutes
-const minutes1 = [20, 45, 60, 15, 90];
-const totalCalories = minutes1
-  .filter(min => min > 30)
-  .map(min => min * 5)
-  .reduce((total, cal) => total + cal, 0);
-console.log('Q2 - Total calories burned:', totalCalories); // 975
-
-// --------------------------------------------------
-
-// Q3. Exam System – Average of Passed Marks
-const marks2 = [35, 72, 88, 40, 25, 90];
-const passed = marks2.filter(mark => mark >= 40);
-const averagePassed = passed.reduce((sum, mark) => sum + mark, 0) / passed.length;
-console.log('Q3 - Average of passed marks:', averagePassed); // 72.5
-
-// --------------------------------------------------
-
-// Q4. Salary System – Monthly Payout
-const wages = [300, 800, 450, 1000, 600];
-const totalPayout = wages
-  .filter(wage => wage > 500)
-  .map(wage => wage + 100)
-  .reduce((total, wage) => total + wage, 0);
-console.log('Q4 - Total payout:', totalPayout); // 2600
-
-// --------------------------------------------------
-
-// Q5. Online Course – Completion Points
-const progress = [20, 50, 75, 40, 100];
-const totalPoints = progress
-  .filter(p => p >= 50)
-  .map(p => p * 2)
-  .reduce((sum, p) => sum + p, 0);
-console.log('Q5 - Total points:', totalPoints); // 450
-
-// --------------------------------------------------
-
-// Q6. Bank Transactions – Final Balance
-const transactions1 = [1000, -500, 2000, -300, 1500];
-const creditedAmount = transactions1
-  .filter(amount => amount > 0)
-  .map(amount => amount * 1.02)
-  .reduce((total, amount) => total + amount, 0);
-console.log('Q6 - Final credited amount:', creditedAmount); // 4590
-
-// --------------------------------------------------
-
-// Q7. Game App – Final Score
-const scores1 = [30, 60, 90, 45, 80];
-const finalScore = scores1
-  .filter(score => score > 50)
-  .map(score => score + 10)
-  .reduce((sum, score) => sum + score, 0);
-console.log('Q7 - Final score:', finalScore); // 250
-
-// --------------------------------------------------
-
-// Q8. E-commerce – Total Taxed Amount
-const prices3 = [500, 1200, 3000, 800, 1500];
-const finalAmount = prices3
-  .filter(price => price > 1000)
-  .map(price => price * 1.18)
-  .reduce((sum, price) => sum + price, 0);
-console.log('Q8 - Final payable amount:', finalAmount); // 6746
-
-// --------------------------------------------------
-
-// Q9. Attendance System – Reward Points
-const hours = [6, 8, 9, 7, 10];
-const rewardPoints = hours
-  .filter(hour => hour >= 8)
-  .map(hour => hour * 10)
-  .reduce((sum, point) => sum + point, 0);
-console.log('Q9 - Total reward points:', rewardPoints); // 270
-
-// --------------------------------------------------
-
-// Q10. Interview Brain Teaser ⭐
-const nu = [1, 2, 3, 4, 5, 6];
-const sumOfSquares = nu
-  .filter(num => num % 2 === 0)
-  .map(num => num * num)
-  .reduce((sum, num) => sum + num, 0);
-console.log('Q10 - Sum of squares of even numbers:', sumOfSquares); // 56
-
-// ===============================
-// MAP + FILTER + REDUCE – 20 PRACTICE
-// ===============================
-
-// Q1. Grocery Store – Total Cost
-const prices5 = [50, 120, 300, 80, 200];
-const totalCost = prices5
-  .filter(p => p > 100)
-  .map(p => p * 1.05)
-  .reduce((sum, p) => sum + p, 0);
-console.log('Q1 - Total cost:', totalCost); // 735
-
-// --------------------------------------------------
-
-// Q2. Fitness App – Weekly Calories
-const minutes2 = [10, 25, 40, 15, 60];
-const totalCalories2 = minutes2
-  .filter(min => min >= 20)
-  .map(min => min * 4)
-  .reduce((sum, cal) => sum + cal, 0);
-console.log('Q2 - Total calories:', totalCalories2); // 520
-
-// --------------------------------------------------
-
-// Q3. Exam Results – Total Passed Marks
-const marks3 = [35, 55, 80, 20, 45];
-const totalPassedMarks = marks3
-  .filter(mark => mark >= 40)
-  .reduce((sum, mark) => sum + mark, 0);
-console.log('Q3 - Total passed marks:', totalPassedMarks); // 180
-
-// --------------------------------------------------
-
-// Q4. Bank App – Total Credits
-const transactions4 = [500, -200, 1000, -300, 700];
-const totalCredits = transactions4
-  .filter(t => t > 0)
-  .reduce((sum, t) => sum + t, 0);
-console.log('Q4 - Total credits:', totalCredits); // 2200
-
-// --------------------------------------------------
-
-// Q5. Online Sale – Discounted Bill
-const prices6 = [800, 1500, 3000, 600, 1200];
-const totalPayable = prices6
-  .filter(p => p > 1000)
-  .map(p => p * 0.85)
-  .reduce((sum, p) => sum + p, 0);
-console.log('Q5 - Total payable amount:', totalPayable); // 5100
-
-// --------------------------------------------------
-
-// Q6. Attendance – Reward Points
-const hours6 = [5, 7, 8, 6, 9];
-const totalPoints6 = hours6
-  .filter(h => h >= 7)
-  .map(h => h * 10)
-  .reduce((sum, p) => sum + p, 0);
-console.log('Q6 - Total reward points:', totalPoints6); // 240
-
-// --------------------------------------------------
-
-// Q7. Delivery App – Total Distance
-const distances7 = [3, 6, 10, 4, 8];
-const totalDistance7 = distances7
-  .filter(d => d > 5)
-  .map(d => d + 1)
-  .reduce((sum, d) => sum + d, 0);
-console.log('Q7 - Total distance:', totalDistance7); // 26
-
-// --------------------------------------------------
-
-// Q8. Salary System – Final Salary
-const salaries8 = [18000, 25000, 30000, 15000];
-const totalSalary = salaries8
-  .filter(s => s > 20000)
-  .map(s => s + 2000)
-  .reduce((sum, s) => sum + s, 0);
-console.log('Q8 - Total salary payout:', totalSalary); // 59000
-
-// --------------------------------------------------
-
-// Q9. Study App – Total Study Time
-const hours9 = [0.5, 1.5, 2, 0.75, 3];
-const totalStudyMinutes = hours9
-  .filter(h => h > 1)
-  .map(h => h * 60)
-  .reduce((sum, m) => sum + m, 0);
-console.log('Q9 - Total study minutes:', totalStudyMinutes); // 390
-
-// --------------------------------------------------
-
-// Q10. Electricity Usage – Monthly Bill
-const units10 = [80, 120, 200, 90, 150];
-const totalBill = units10
-  .filter(u => u > 100)
-  .map(u => u * 6)
-  .reduce((sum, b) => sum + b, 0);
-console.log('Q10 - Total electricity bill:', totalBill); // 2820
-
-// --------------------------------------------------
-
-// Q11. Game Scores – Final Power Score
-const scores11 = [30, 50, 90, 20, 70];
-const totalPowerScore = scores11
-  .filter(s => s > 40)
-  .map(s => s * 2)
-  .reduce((sum, s) => sum + s, 0);
-console.log('Q11 - Total power score:', totalPowerScore); // 420
-
-// --------------------------------------------------
-
-// Q12. Travel App – Total Fare
-const rides12 = [5, 12, 20, 8, 15];
-const totalFare = rides12
-  .filter(r => r > 10)
-  .map(r => r + 50)
-  .reduce((sum, r) => sum + r, 0);
-console.log('Q12 - Total fare:', totalFare); // 147
-
-// --------------------------------------------------
-
-// Q13. Office Work – Productive Hours
-const hours13 = [4, 6, 8, 5, 9];
-const totalProductiveMinutes = hours13
-  .filter(h => h >= 6)
-  .map(h => h * 60)
-  .reduce((sum, m) => sum + m, 0);
-console.log('Q13 - Total productive minutes:', totalProductiveMinutes); // 1260
-
-// --------------------------------------------------
-
-// Q14. Shopping Cart – Reward Coins
-const purchases14 = [300, 800, 1200, 400];
-const totalCoins = purchases14
-  .filter(p => p > 500)
-  .map(p => 10)
-  .reduce((sum, c) => sum + c, 0);
-console.log('Q14 - Total coins earned:', totalCoins); // 20
-
-// --------------------------------------------------
-
-// Q15. Fuel App – Total Fuel Cost
-const liters15 = [3, 6, 10, 4, 8];
-const totalFuelCost = liters15
-  .filter(l => l > 5)
-  .map(l => l * 105)
-  .reduce((sum, cost) => sum + cost, 0);
-console.log('Q15 - Total fuel cost:', totalFuelCost); // 2940
-
-// --------------------------------------------------
-
-// Q16. Interview Classic – Sum of Cubes
-const numbers16 = [1, 2, 3, 4, 5];
-const sumOfCubes = numbers16
-  .filter(n => n % 2 !== 0)
-  .map(n => n ** 3)
-  .reduce((sum, n) => sum + n, 0);
-console.log('Q16 - Sum of cubes of odd numbers:', sumOfCubes); // 153
-
-// --------------------------------------------------
-
-// Q17. Performance Tracking – Bonus Points
-const scores17 = [10, 20, 30, 40, 50];
-const average17 = scores17.reduce((sum, s) => sum + s, 0) / scores17.length;
-const totalBonusScore = scores17
-  .filter(s => s > average17)
-  .map(s => s + 5)
-  .reduce((sum, s) => sum + s, 0);
-console.log('Q17 - Total score with bonus:', totalBonusScore); // 110
-
-// --------------------------------------------------
-
-// Q18. Subscription App – Final Bill
-const plans18 = [199, 399, 599, 299];
-const totalBill18 = plans18
-  .filter(p => p > 300)
-  .map(p => p * 1.18)
-  .reduce((sum, p) => sum + p, 0);
-console.log('Q18 - Final subscription bill:', totalBill18); // 1181.18
-
-// --------------------------------------------------
-
-// Q19. Learning App – Achievement Score
-const scores19 = [45, 60, 70, 30, 80];
-const totalAchievementScore = scores19
-  .filter(s => s >= 60)
-  .map(s => s ** 2)
-  .reduce((sum, s) => sum + s, 0);
-console.log('Q19 - Total achievement score:', totalAchievementScore); // 15800
-
-// --------------------------------------------------
-
-// Q20. Interview Finisher ⭐
-const numbers20 = [3, 6, 9, 10, 12];
-const totalSum20 = numbers20
-  .filter(n => n % 3 === 0)
-  .map(n => n * 10)
-  .reduce((sum, n) => sum + n, 0);
-console.log('Q20 - Total sum:', totalSum20); // 300
+
+// [5, 58, 42, "Hello"].forEach(val =>{
+//   let new_arr = val + 2;
+//   console.log(new_arr)
+// })
+
+
+// // .map() Method:
+// // map tyare j use karvu ke jyare ek new array create karvo chhe
+// // first map create a black array -- only for understanding
+// let data = [10, 20, 50, 40, 15];
+// // same like a for each loop but map return a new array
+// let temp_data = data.map((val) => {
+//   if (val > 20) {
+//     return val;
+//   }
+// });
+
+// // use case -- data ma thi specific data new array ma store karvo hoy
+// // ex. product ma thi specific category na product new array ma store karva hoy
+// // if you want to show only electronics producat on your homepage
+// let marks = [10,5,20,25,15]
+// let final_marks = marks.map((val) => {
+//   if (val == 5){
+//     return val + 4;
+//   }
+//   return val;
+// })
+
+
+// //filter 
+// // filter tyare use karvu ke jyare ek new array create karvo chhe with condition 
+// //in return true/false
+// // if true --> add into new array
+// //id else(false) --> not add into new array
+// let laptops_price = [15000,20000,30000,65000,99000,45000];
+
+// let expensive_laptops = laptops_price.filter((price) => {
+//   if (price > 30000) return true;
+// });
+// // je value 30000 thi vadhare che te new array ma add thase and biji value ne array ma add nhi kare
+// // use case -- data ma thi specific data new array ma store karvo hoy based on condition
+// // ex. poduct ma thi specific price na producat new array ma store karva hoy
+// // if you want to show only expensive producat on your homepage
+// // if you want to filter producat based on price
+// let product_type = ["Mobile", "Tablet", "Laptop","Mouse", "Keyborad"];
+
+// let filter_product_type = product_type.filter((type)=> {
+//   if (type === "Tablet" || type === "Mobile") return
+// true;
+// });
+
+
+// // reduce
+// // reduce tyare j use karvu ke jare ek single value calculate karvi hoy from array
+// let total_price = [15, 68, 45, 58, 52, 48];
+
+// let final_price = total_price.reduce((accumulator,
+// val) => {
+//   return accumulator + val;
+// }, 0); // intial value of accumulator
+
+// // 0 + 10 => 10
+// // 10 + 10 => 20
+// // 20 + 10 => 30
+// // 30 + 10 => 40
+// console.log("final Price:", final_price)
+// //accumulator --> je value functipon ma return thase te accumulator ma store thase --> accumulator name change kari sako cho
+// // val --> array ni darek value
+// // use case -- data ma thi ek single value calculate karvi hoy
+// //ex. product ma thi total price calculate karvi hoy
+
+// // find
+// // find tyare j use karvu ke jare array mathi ek value find karvi hoy based on condition
+// // find() return kare chhe array no element --> callback no return value nahi
+// // never returns what you return inside it
+// // returns the array element itself
+// // .find() stops at the first match
+// // It does not continue looping
+
+// let product = ["Laptop", "Mobile", "Tablet","Desktop", "Smart Watch"];
+// let find_product = product.find( (item) => {
+//   console.log("can't find product"); // not working
+// // why??
+// if (item === "Tablet") {
+//   return true;
+// } else if (item === "Mobile") {
+//   return true;
+// } else {
+//   return false;
+// }
+// });  
+// // use case -- data ma thi ek value find karvi hoy based on condition
+// // ex. producat ma thi specific producat find karvo hoy based on name
+// // find vs filter
+// // Real-life Scenario: Shopping Mall Security
+// // you are a security guard at a shopping mall
+// // chack the list of visitors
+// let people = ["John", "Sara", "Mike", "Anna","David", "Sara"];
+// // find --> you are looking for the first person named "Sara" in the list and stop searching (Pehli var j male, bas e j and Anagal check j na kare)
+// let person = people.find((name) => name === "Sara");
+// console.log(person);
+
+// // filter --> you want to find all visitors named "sara" in the list(all data check kare and list na end sudhi check kare)
+// let AllSara = people.filter((name) => name === "Sara");
+// console.log(AllSara);
+
+// //exmple 2: Book bus for travel 
+
+// // some
+// // check kare chhe ke array ma koi pan ek item condition satisfy kare chhe ke nahi
+// // condition true aave tyare stop kare
+// // some() vs find() --> some() can't return you value its return true or false, find() return value of array
+// // give ans in true and false
+// let marks1 = [10, 20, 35, 90];
+// let any = marks1.some(function (val) {
+//   if (val > 85) return true;
+//   // if (val < 85) return "need improvement";
+// });
+// // use case -- check if some producat are out of stock in your cart
+
+// //every
+// // check kare chhe ke array ma baddha j item condition satisfy kare chhe ke nahi
+// // true -- baddha items condition match kare
+// // false -- ek pan fail thay to
+// let def = [20, 30, 40, 50];
+// let num = def.every(function (val) {
+//     return val < 60;
+// });
+// // use case --> check all student is pass or not
+// // some(), find(), filter(), every()
+// // let products = ["Tablet", "Mobile", "Laptop", "MoBile"]
+// // method --> condition --> output
+// // .some()   --> item === "Mobile"  --> true
+// // .find()   --> item === "Mobile"  --> "Mobile"
+// // .filter() --> item === "Mobile"  --> ["Mobile", "Mobile"]
+// // .every()  --> item === "Mobile"  --> false
+
+// // Destructuring operator -- give value to variable (ex. we don't use every time arr[1], just save it into variable let [ , k] = arr)
+// let arr4 = [1, 2, 3, 4, 5];
+// let [j, k] = arr4; // --> destructuring
+// // let [j, , k] = arr;
+// console.log(k);
+// let temp_a = arr4[4]
+// let temp_b = arr4[2]
+// let temp_c = arr4[1]
+// let user_data = ["text","text@gmail.com","Male","Surat"]
+
+// // spread oprator -- copy value from main array
+// let arr8 = [1, 2, 3, 4, 5, 6, 7];
+// // let arr4 = arr3; // --> just give reference not
+// // copy value(when you change into arr4 that will be
+// // change arr3 too)
+// let arr9 = [...arr8];
+// // ... --> rest --> into function
+// // ... --> spread --> into Array and Object
+
+
+
+
+// // Example 1: Double daily steps count
+// const steps = [1000, 2000, 3000];
+// const newSteps = steps.map(step => step * 2);
+
+// // Example 2: Convert minutes to seconds
+// const minutes = [1, 5, 10];
+// const seconds = minutes.map(min => min * 60);
+
+// // Example 3: Add ₹50 delivery charge
+// const prices1 = [200, 350, 500];
+// const finalPrices = prices1.map(price => price + 50);
+
+// // Example 4: Convert exam marks to grades
+// const mark1 = [35, 72, 88, 40];
+// const grades = mark1.map(mark => mark >= 40 ? 'Pass' : 'Fail');
+
+// // Example 5: Capitalize names
+// const names = ['rahul', 'neha', 'amit'];
+// const formattedNames = names.map(name => name[0].toUpperCase() + name.slice(1));
+
+// // Example 6: Apply 10% discount
+// const prices2 = [500, 1000, 1500];
+// const discounted = prices2.map(price => price - price * 0.10);
+
+// // Example 7: Add bonus points to scores
+// const scores = [45, 60, 85];
+// const finalScores = scores.map(score => {
+//   if (score >= 80) return score + 20;
+//   if (score >= 50) return score + 10;
+//   return score;
+// });
+
+// // Example 8: Convert Celsius to Fahrenheit
+// const celsius = [0, 20, 30];
+// const fahrenheit = celsius.map(temp => (temp * 9 / 5) + 32);
+
+// // Example 9: Generate table of two
+// const numbers = [1, 2, 3, 4];
+// const tableOfTwo = numbers.map(num => num * 2);
+
+// // Example 10: Format balance messages
+// const balances = [500, 1200, 300];
+// const messages = balances.map(balance => `Your balance is ₹${balance}`);
+
+
+
+
+// // Example 1: Get even numbers
+// const numbere = [1, 2, 3, 4, 5, 6];
+// const evenNumbers = numbere.filter(num => num % 2 === 0);
+
+// // Example 2: Filter adults
+// const ages = [2, 1, 10, 16, 5];
+// const adults = ages.filter(age => age >= 18);
+
+// // Example 3: Remove empty items
+// const inputs = ['Hello', '', 'World', '', 'JS'];
+// const validInputs = inputs.filter(text => text !== '');
+
+// // Example 4: Filter passing marks
+// const marke = [35, 72, 88, 40, 25];
+// const passedStudents = marke.filter(mark => mark >= 40);
+
+// // Example 5: Get affordable prices
+// const prices = [199, 499, 999, 1499, 299];
+// const affordable = prices.filter(price => price <= 500);
+
+// // Example 6: Filter long words
+// const words = ['hi', 'hello', 'javascript', 'ok'];
+// const longWords = words.filter(word => word.length > 3);
+
+// // Example 7: Filter positive numbers
+// const transactions = [200, -100, 500, -50, 300];
+// const credits = transactions.filter(amount => amount > 0);
+
+// // Example 8: Filter numbers within a range
+// const scoree = [45, 60, 85, 30, 90];
+// const selectedScores = scoree.filter(score => score >= 50 && score <= 90);
+
+// // =======================
+// // JAVASCRIPT REDUCE EXAMPLES
+// // =======================
+
+// // 1. Total money in wallet
+// // Real life: Add all cash amounts
+// const money = [100, 200, 50];
+// const totalMoney = money.reduce((sum, amount) => sum + amount, 0);
+// console.log('Total money:', totalMoney); // 350
+
+// // --------------------------------------------------
+
+// // 2. Total steps walked in a week
+// // Real life: Fitness tracker
+// const ste = [3000, 5000, 4000, 6000];
+// function addSteps(total, step) {
+//   return total + step;
+// }
+// const weeklySteps = steps.reduce(addSteps, 0);
+// console.log('Weekly steps:', weeklySteps); // 18000
+
+// // --------------------------------------------------
+
+// // 3. Find total cart price
+// // Real life: Shopping bill
+// const price = [499, 299, 199];
+// const totalPrice = price.reduce((total, price) => total + price, 0);
+// console.log('Total cart price:', totalPrice); // 997
+
+// // --------------------------------------------------
+
+// // 4. Find maximum score
+// // Real life: Highest exam mark
+// const mar = [45, 88, 67, 92];
+// const highest = mar.reduce((max, mark) => mark > max ? mark : max, marks[0]);
+// console.log('Highest score:', highest); // 92
+
+// // --------------------------------------------------
+
+// // 5. Count total characters
+// // Real life: Text length calculation
+// const word = ['Hi', 'Hello', 'JS'];
+// const totalChars = words.reduce((count, word) => count + word.length, 0);
+// console.log('Total characters:', totalChars); // 9
+
+// // --------------------------------------------------
+
+// // 6. Combine words into a sentence
+// // Real life: Message builder
+// const wordsSentence = ['Learning', 'JavaScript', 'is', 'fun'];
+// const sentence = wordsSentence.reduce((text, word) => text + ' ' + word);
+// console.log('Sentence:', sentence); // "Learning JavaScript is fun"
+
+// // --------------------------------------------------
+
+// // 7. Count passed students
+// // Real life: Result summary
+// const examMarks = [35, 72, 88, 40, 25];
+// const passCount = examMarks.reduce((count, mark) => mark >= 40 ? count + 1 : count, 0);
+// console.log('Passed students:', passCount); // 3
+
+// // --------------------------------------------------
+
+// // 8. Calculate final balance
+// // Real life: Bank account calculation
+// const transaction = [1000, -200, -300, 500];
+// const finalBalance = transaction.reduce((balance, amount) => balance + amount, 0);
+// console.log('Final balance:', finalBalance); // 1000
+
+// // --------------------------------------------------
+
+// // 9. Build comma-separated string
+// // Real life: Display values in UI
+// const items = ['Pen', 'Book', 'Pencil'];
+// const result = items.reduce((text, item) => text + ', ' + item);
+// console.log('Comma-separated items:', result); // "Pen, Book, Pencil"
+
+
+
+// // ===============================
+// // MAP + FILTER + REDUCE PRACTICE
+// // ===============================
+
+// // Q1. Shopping App – Discounted Total
+// const prices4 = [200, 800, 1200, 450, 700];
+// const total1 = prices4
+//   .filter(price => price > 500)
+//   .map(price => price * 0.9)
+//   .reduce((sum, price) => sum + price, 0);
+// console.log('Q1 - Total to pay:', total1); // 2430
+
+// // --------------------------------------------------
+
+// // Q2. Fitness App – Total Active Minutes
+// const minutes1 = [20, 45, 60, 15, 90];
+// const totalCalories = minutes1
+//   .filter(min => min > 30)
+//   .map(min => min * 5)
+//   .reduce((total, cal) => total + cal, 0);
+// console.log('Q2 - Total calories burned:', totalCalories); // 975
+
+// // --------------------------------------------------
+
+// // Q3. Exam System – Average of Passed Marks
+// const marks2 = [35, 72, 88, 40, 25, 90];
+// const passed = marks2.filter(mark => mark >= 40);
+// const averagePassed = passed.reduce((sum, mark) => sum + mark, 0) / passed.length;
+// console.log('Q3 - Average of passed marks:', averagePassed); // 72.5
+
+// // --------------------------------------------------
+
+// // Q4. Salary System – Monthly Payout
+// const wages = [300, 800, 450, 1000, 600];
+// const totalPayout = wages
+//   .filter(wage => wage > 500)
+//   .map(wage => wage + 100)
+//   .reduce((total, wage) => total + wage, 0);
+// console.log('Q4 - Total payout:', totalPayout); // 2600
+
+// // --------------------------------------------------
+
+// // Q5. Online Course – Completion Points
+// const progress = [20, 50, 75, 40, 100];
+// const totalPoints = progress
+//   .filter(p => p >= 50)
+//   .map(p => p * 2)
+//   .reduce((sum, p) => sum + p, 0);
+// console.log('Q5 - Total points:', totalPoints); // 450
+
+// // --------------------------------------------------
+
+// // Q6. Bank Transactions – Final Balance
+// const transactions1 = [1000, -500, 2000, -300, 1500];
+// const creditedAmount = transactions1
+//   .filter(amount => amount > 0)
+//   .map(amount => amount * 1.02)
+//   .reduce((total, amount) => total + amount, 0);
+// console.log('Q6 - Final credited amount:', creditedAmount); // 4590
+
+// // --------------------------------------------------
+
+// // Q7. Game App – Final Score
+// const scores1 = [30, 60, 90, 45, 80];
+// const finalScore = scores1
+//   .filter(score => score > 50)
+//   .map(score => score + 10)
+//   .reduce((sum, score) => sum + score, 0);
+// console.log('Q7 - Final score:', finalScore); // 250
+
+// // --------------------------------------------------
+
+// // Q8. E-commerce – Total Taxed Amount
+// const prices3 = [500, 1200, 3000, 800, 1500];
+// const finalAmount = prices3
+//   .filter(price => price > 1000)
+//   .map(price => price * 1.18)
+//   .reduce((sum, price) => sum + price, 0);
+// console.log('Q8 - Final payable amount:', finalAmount); // 6746
+
+// // --------------------------------------------------
+
+// // Q9. Attendance System – Reward Points
+// const hours = [6, 8, 9, 7, 10];
+// const rewardPoints = hours
+//   .filter(hour => hour >= 8)
+//   .map(hour => hour * 10)
+//   .reduce((sum, point) => sum + point, 0);
+// console.log('Q9 - Total reward points:', rewardPoints); // 270
+
+// // --------------------------------------------------
+
+// // Q10. Interview Brain Teaser ⭐
+// const nu = [1, 2, 3, 4, 5, 6];
+// const sumOfSquares = nu
+//   .filter(num => num % 2 === 0)
+//   .map(num => num * num)
+//   .reduce((sum, num) => sum + num, 0);
+// console.log('Q10 - Sum of squares of even numbers:', sumOfSquares); // 56
+
+// // ===============================
+// // MAP + FILTER + REDUCE – 20 PRACTICE
+// // ===============================
+
+// // Q1. Grocery Store – Total Cost
+// const prices5 = [50, 120, 300, 80, 200];
+// const totalCost = prices5
+//   .filter(p => p > 100)
+//   .map(p => p * 1.05)
+//   .reduce((sum, p) => sum + p, 0);
+// console.log('Q1 - Total cost:', totalCost); // 735
+
+// // --------------------------------------------------
+
+// // Q2. Fitness App – Weekly Calories
+// const minutes2 = [10, 25, 40, 15, 60];
+// const totalCalories2 = minutes2
+//   .filter(min => min >= 20)
+//   .map(min => min * 4)
+//   .reduce((sum, cal) => sum + cal, 0);
+// console.log('Q2 - Total calories:', totalCalories2); // 520
+
+// // --------------------------------------------------
+
+// // Q3. Exam Results – Total Passed Marks
+// const marks3 = [35, 55, 80, 20, 45];
+// const totalPassedMarks = marks3
+//   .filter(mark => mark >= 40)
+//   .reduce((sum, mark) => sum + mark, 0);
+// console.log('Q3 - Total passed marks:', totalPassedMarks); // 180
+
+// // --------------------------------------------------
+
+// // Q4. Bank App – Total Credits
+// const transactions4 = [500, -200, 1000, -300, 700];
+// const totalCredits = transactions4
+//   .filter(t => t > 0)
+//   .reduce((sum, t) => sum + t, 0);
+// console.log('Q4 - Total credits:', totalCredits); // 2200
+
+// // --------------------------------------------------
+
+// // Q5. Online Sale – Discounted Bill
+// const prices6 = [800, 1500, 3000, 600, 1200];
+// const totalPayable = prices6
+//   .filter(p => p > 1000)
+//   .map(p => p * 0.85)
+//   .reduce((sum, p) => sum + p, 0);
+// console.log('Q5 - Total payable amount:', totalPayable); // 5100
+
+// // --------------------------------------------------
+
+// // Q6. Attendance – Reward Points
+// const hours6 = [5, 7, 8, 6, 9];
+// const totalPoints6 = hours6
+//   .filter(h => h >= 7)
+//   .map(h => h * 10)
+//   .reduce((sum, p) => sum + p, 0);
+// console.log('Q6 - Total reward points:', totalPoints6); // 240
+
+// // --------------------------------------------------
+
+// // Q7. Delivery App – Total Distance
+// const distances7 = [3, 6, 10, 4, 8];
+// const totalDistance7 = distances7
+//   .filter(d => d > 5)
+//   .map(d => d + 1)
+//   .reduce((sum, d) => sum + d, 0);
+// console.log('Q7 - Total distance:', totalDistance7); // 26
+
+// // --------------------------------------------------
+
+// // Q8. Salary System – Final Salary
+// const salaries8 = [18000, 25000, 30000, 15000];
+// const totalSalary = salaries8
+//   .filter(s => s > 20000)
+//   .map(s => s + 2000)
+//   .reduce((sum, s) => sum + s, 0);
+// console.log('Q8 - Total salary payout:', totalSalary); // 59000
+
+// // --------------------------------------------------
+
+// // Q9. Study App – Total Study Time
+// const hours9 = [0.5, 1.5, 2, 0.75, 3];
+// const totalStudyMinutes = hours9
+//   .filter(h => h > 1)
+//   .map(h => h * 60)
+//   .reduce((sum, m) => sum + m, 0);
+// console.log('Q9 - Total study minutes:', totalStudyMinutes); // 390
+
+// // --------------------------------------------------
+
+// // Q10. Electricity Usage – Monthly Bill
+// const units10 = [80, 120, 200, 90, 150];
+// const totalBill = units10
+//   .filter(u => u > 100)
+//   .map(u => u * 6)
+//   .reduce((sum, b) => sum + b, 0);
+// console.log('Q10 - Total electricity bill:', totalBill); // 2820
+
+// // --------------------------------------------------
+
+// // Q11. Game Scores – Final Power Score
+// const scores11 = [30, 50, 90, 20, 70];
+// const totalPowerScore = scores11
+//   .filter(s => s > 40)
+//   .map(s => s * 2)
+//   .reduce((sum, s) => sum + s, 0);
+// console.log('Q11 - Total power score:', totalPowerScore); // 420
+
+// // --------------------------------------------------
+
+// // Q12. Travel App – Total Fare
+// const rides12 = [5, 12, 20, 8, 15];
+// const totalFare = rides12
+//   .filter(r => r > 10)
+//   .map(r => r + 50)
+//   .reduce((sum, r) => sum + r, 0);
+// console.log('Q12 - Total fare:', totalFare); // 147
+
+// // --------------------------------------------------
+
+// // Q13. Office Work – Productive Hours
+// const hours13 = [4, 6, 8, 5, 9];
+// const totalProductiveMinutes = hours13
+//   .filter(h => h >= 6)
+//   .map(h => h * 60)
+//   .reduce((sum, m) => sum + m, 0);
+// console.log('Q13 - Total productive minutes:', totalProductiveMinutes); // 1260
+
+// // --------------------------------------------------
+
+// // Q14. Shopping Cart – Reward Coins
+// const purchases14 = [300, 800, 1200, 400];
+// const totalCoins = purchases14
+//   .filter(p => p > 500)
+//   .map(p => 10)
+//   .reduce((sum, c) => sum + c, 0);
+// console.log('Q14 - Total coins earned:', totalCoins); // 20
+
+// // --------------------------------------------------
+
+// // Q15. Fuel App – Total Fuel Cost
+// const liters15 = [3, 6, 10, 4, 8];
+// const totalFuelCost = liters15
+//   .filter(l => l > 5)
+//   .map(l => l * 105)
+//   .reduce((sum, cost) => sum + cost, 0);
+// console.log('Q15 - Total fuel cost:', totalFuelCost); // 2940
+
+// // --------------------------------------------------
+
+// // Q16. Interview Classic – Sum of Cubes
+// const numbers16 = [1, 2, 3, 4, 5];
+// const sumOfCubes = numbers16
+//   .filter(n => n % 2 !== 0)
+//   .map(n => n ** 3)
+//   .reduce((sum, n) => sum + n, 0);
+// console.log('Q16 - Sum of cubes of odd numbers:', sumOfCubes); // 153
+
+// // --------------------------------------------------
+
+// // Q17. Performance Tracking – Bonus Points
+// const scores17 = [10, 20, 30, 40, 50];
+// const average17 = scores17.reduce((sum, s) => sum + s, 0) / scores17.length;
+// const totalBonusScore = scores17
+//   .filter(s => s > average17)
+//   .map(s => s + 5)
+//   .reduce((sum, s) => sum + s, 0);
+// console.log('Q17 - Total score with bonus:', totalBonusScore); // 110
+
+// // --------------------------------------------------
+
+// // Q18. Subscription App – Final Bill
+// const plans18 = [199, 399, 599, 299];
+// const totalBill18 = plans18
+//   .filter(p => p > 300)
+//   .map(p => p * 1.18)
+//   .reduce((sum, p) => sum + p, 0);
+// console.log('Q18 - Final subscription bill:', totalBill18); // 1181.18
+
+// // --------------------------------------------------
+
+// // Q19. Learning App – Achievement Score
+// const scores19 = [45, 60, 70, 30, 80];
+// const totalAchievementScore = scores19
+//   .filter(s => s >= 60)
+//   .map(s => s ** 2)
+//   .reduce((sum, s) => sum + s, 0);
+// console.log('Q19 - Total achievement score:', totalAchievementScore); // 15800
+
+// // --------------------------------------------------
+
+// // Q20. Interview Finisher ⭐
+// const numbers20 = [3, 6, 9, 10, 12];
+// const totalSum20 = numbers20
+//   .filter(n => n % 3 === 0)
+//   .map(n => n * 10)
+//   .reduce((sum, n) => sum + n, 0);
+// console.log('Q20 - Total sum:', totalSum20); // 300
+
+
+
+// Array methods: find() vs some()
+// 1. find() – First even number (First available even seat)
+// const seats1 = [3, 5, 8, 10, 7];
+// const firstEvenSeat = seats1.find(seat => seat % 2 === 0);
+// console.log('First even seat:', firstEvenSeat);
+
+// // 2. some() – Any even number? (Any VIP seat)
+// const seats2 = [3, 5, 7, 9];
+// const hasEvenSeat = seats2.some(seat => seat % 2 === 0);
+// console.log('Has even seat:', hasEvenSeat);
+
+// // 3. find() – First passing mark
+// const marks1 = [25, 35, 40, 60];
+// const firstPass = marks1.find(mark => mark >= 40);
+// console.log('First passing mark:', firstPass);
+
+// // 4. some() – Any failed student?
+// const marks2 = [60, 70, 55, 30];
+// const hasFail = marks2.some(mark => mark < 40);
+// console.log('Any failed student:', hasFail);
+
+// // 5. find() – First affordable product
+// const prices1 = [1500, 1200, 800, 2000];
+// const affordable = prices1.find(price => price <= 1000);
+// console.log('First affordable product:', affordable);
+
+// // 6. some() – Any discount item?
+// const prices2 = [500, 800, 1200, 300];
+// const hasDiscountItem = prices2.some(price => price < 500);
+// console.log('Has discount item:', hasDiscountItem);
+
+// // 7. find() – First long word
+// const words = ['hi', 'hello', 'javascript', 'ok'];
+// const longWord = words.find(word => word.length > 5);
+// console.log('First long word:', longWord);
+
+// // 8. some() – Any empty input?
+// const inputs = ['name', 'email', '', 'password'];
+// const hasEmpty = inputs.some(input => input === '');
+// console.log('Has empty input:', hasEmpty);
+
+// // 9. find() – First high transaction
+// const transactions = [200, 500, 1200, 3000, 400];
+// const highTransaction = transactions.find(amount => amount > 1000);
+// console.log('First high transaction:', highTransaction);
+
+// // 10. some() – System alert check
+// const temperatures = [30, 32, 35, 42, 36];
+// const isOverheated = temperatures.some(temp => temp > 40);
+// console.log('System overheated:', isOver)
+
+
+//========================================
+
+// Q1. Shopping List – Price Increase
+// const prices1 = [100, 200, 300];
+// const updatedPrices = prices1.map(p => p + 20);
+// console.log('Q1:', updatedPrices);
+
+// // Q2. Exam Marks – Passing Students
+// const marks2 = [35, 60, 45, 20, 80];
+// const passingMarks = marks2.filter(m => m >= 40);
+// console.log('Q2:', passingMarks);
+
+// // Q3. Attendance Check
+// const attendance = [80, 90, 70, 85];
+// const lowAttendance = attendance.some(a => a < 75);
+// console.log('Q3:', lowAttendance);
+
+// // Q4. Find First Discounted Item
+// const prices4 = [1200, 800, 450, 600];
+// const discountedItem = prices4.find(p => p < 500);
+// console.log('Q4:', discountedItem);
+
+// // Q5. Salary Calculation
+// const salaries5 = [18000, 25000, 30000, 15000];
+// const totalPayout = salaries5
+//   .filter(s => s > 20000)
+//   .map(s => s + 2000)
+//   .reduce((sum, s) => sum + s, 0);
+// console.log('Q5:', totalPayout);
+
+// // Q6. Product Quality Check
+// const ratings = [4, 5, 4, 4];
+// const allGood = ratings.every(r => r >= 4);
+// console.log('Q6:', allGood);
+
+// // Q7. Daily Expenses – Total
+// const expenses7 = [200, 150, 300, 100];
+// const totalExpenses = expenses7.reduce((sum, e) => sum + e, 0);
+// console.log('Q7:', totalExpenses);
+
+// // Q8. Scores Update
+// const scores8 = [45, 60, 80, 30, 70];
+// const updatedScores = scores8.filter(s => s > 50).map(s => s + 10);
+// console.log('Q8:', updatedScores);
+
+// // Q9. Array Destructuring – Top Scores
+// const scores9 = [95, 90, 85, 80];
+// const [first, second] = scores9;
+// console.log('Q9:', first, second);
+
+// // Q10. Shopping Cart Merge
+// const cart1 = [200, 400];
+// const cart2 = [300, 500];
+// const mergedCart = [...cart1, ...cart2];
+// console.log('Q10:', mergedCart);
+
+// // Q11. Expense Validation
+// const expenses11 = [200, 450, 800, 1200];
+// const validExpenses = expenses11.every(e => e < 1000);
+// console.log('Q11:', validExpenses);
+
+// // Q12. Transaction Analysis
+// const transactions = [500, -200, 1200, 300];
+// const firstAbove1000 = transactions.find(t => t > 1000);
+// const hasNegative = transactions.some(t => t < 0);
+// console.log('Q12:', firstAbove1000, hasNegative);
+
+// // Q13. Student Result Summary
+// const marks13 = [30, 45, 60, 25, 80];
+// const passing13 = marks13.filter(m => m >= 40);
+// const avgMarks = passing13.reduce((s, m) => s + m, 0) / passing13.length;
+// console.log('Q13:', avgMarks);
+
+// // Q14. Temperature Alert System
+// const temps = [22, 30, 45, 28];
+// const exceeds40 = temps.some(t => t > 40);
+// const allAbove20 = temps.every(t => t > 20);
+// console.log('Q14:', exceeds40, allAbove20);
+
+// // Q15. Spread + Reduce Combo
+// const a = [1, 2, 3];
+// const b = [4, 5, 6];
+// const total15 = [...a, ...b].reduce((sum, n) => sum + n, 0);
+// console.log('Q15:', total15);
+
+// // Q16. Bonus Eligibility
+// const scores16 = [60, 70, 80, 90];
+// const avg16 = scores16.reduce((s, n) => s + n, 0) / scores16.length;
+// const eligible = scores16.every(s => s > avg16);
+// console.log('Q16:', eligible);
+
+// // Q17. First Valid Input
+// const inputs = ['', '', 'name', 'email'];
+// const firstValid = inputs.find(i => i !== '');
+// console.log('Q17:', firstValid);
+
+// // Q18. Salary Spread
+// const salaries18 = [20000, 30000, 40000];
+// const newSalaries = [...salaries18, 50000];
+// console.log('Q18:', newSalaries);
+
+// // Q19. Performance Check
+// const performance = [55, 65, 45, 80];
+// const anyBelow50 = performance.some(p => p < 50);
+// const allAbove60 = performance.every(p => p > 60);
+// console.log('Q19:', anyBelow50, allAbove60);
+
+// // Q20. Interview Finisher
+// const x = [1, 2, 3];
+// const y = [4, 5, 6];
+// const result20 = [...x, ...y]
+//   .filter(n => n % 2 === 0)
+//   .map(n => n * n)
+//   .reduce((sum, n) => sum + n, 0);
+// console.log('Q20:', result20);
+
+//=====================================
+
+// ONE FILE: All 50 Questions Solutions
+
+// Q1
+const prices1 = [100, 200, 300].map(p => p + 10);
+
+// Q2
+const evenNums = [1, 2, 3, 4, 5, 6].filter(n => n % 2 === 0);
+
+// Q3
+const anyNegative = [10, -5, 20].some(n => n < 0);
+
+// Q4
+const allPassing = [45, 60, 70].every(m => m >= 40);
+
+// Q5
+const firstAbove50 = [20, 40, 55, 70].find(n => n > 50);
+
+// Q6
+const totalBill = [120, 300, 80].reduce((s, n) => s + n, 0);
+
+// Q7
+const minutes = [1, 2, 1.5].map(h => h * 60);
+
+// Q8
+const firstEmpty = ['name', '', 'email'].find(v => v === '');
+
+// Q9
+const hasZero = [5, 0, 8].some(v => v === 0);
+
+// Q10
+const doubled = [2, 4, 6].map(n => n * 2);
+
+// Q11
+const [d1, d2] = [10, 20, 30];
+
+// Q12
+const merged12 = [...[1, 2], ...[3, 4]];
+
+// Q13
+const tempsBelow50 = [30, 40, 45].every(t => t < 50);
+
+// Q14
+const firstEven = [1, 3, 4, 6].find(n => n % 2 === 0);
+
+// Q15
+const totalSteps = [2000, 3000, 1500].reduce((s, n) => s + n, 0);
+
+// Q16
+const highSalaries = [18000, 26000, 30000].filter(s => s > 25000);
+
+// Q17
+const bonusSalaries = [15000, 22000, 28000].filter(s => s > 20000).map(s => s + 500);
+
+// Q18
+const expenseTotal = [50, 200, 150, 80].filter(e => e > 100).reduce((s, n) => s + n, 0);
+
+// Q19
+const scores19 = [60, 70, 80];
+const avg19 = scores19.reduce((s, n) => s + n, 0) / scores19.length;
+const belowAvg = scores19.some(s => s < avg19);
+
+// Q20
+const firstDiv7 = [10, 14, 21].find(n => n % 7 === 0);
+
+// Q21
+const discounted = [500, 1000, 1500].map(p => p * 0.9);
+
+// Q22
+const calories = [20, 45, 60].filter(m => m > 30).reduce((s, n) => s + n, 0);
+
+// Q23
+const allFilled = ['name', 'email', 'password'].every(v => v !== '');
+
+// Q24
+const merged24 = [...[1], ...[2], ...[3]];
+
+// Q25
+const firstFail = [55, 48, 35, 70].find(m => m < 40);
+
+// Q26
+const passed = [30, 45, 60, 80].filter(m => m >= 40);
+const avgPassed = passed.reduce((s, n) => s + n, 0) / passed.length;
+
+// Q27
+const oddSquares = [1, 2, 3, 4, 5].filter(n => n % 2 !== 0).map(n => n * n);
+
+// Q28
+const exceeds1000 = [200, 500, 1500].some(v => v > 1000);
+
+// Q29
+const [first29, ...rest29] = [10, 20, 30, 40];
+
+// Q30
+const rewardPoints = [6, 8, 9, 7].filter(h => h >= 8).reduce((s, n) => s + n, 0);
+
+// Q31
+const longWord = ['hi', 'hello', 'world'].find(w => w.length > 4);
+
+// Q32
+const allEven = [2, 4, 6, 8].every(n => n % 2 === 0);
+
+// Q33
+const positives = [...[1, -2], ...[3, -4]].filter(n => n > 0);
+
+// Q34
+const billWithTax = [200, 400].map(p => p * 1.05).reduce((s, n) => s + n, 0);
+
+// Q35
+const temps35 = [20, 30, 40];
+const avg35 = temps35.reduce((s, n) => s + n, 0) / temps35.length;
+const aboveAvgTemp = temps35.find(t => t > avg35);
+
+// Q36
+const sumEven36 = [...[1, 2, 3], ...[4, 5, 6]].filter(n => n % 2 === 0).reduce((s, n) => s + n, 0);
+
+// Q37
+const scores37 = [60, 70, 80];
+const avg37 = scores37.reduce((s, n) => s + n, 0) / scores37.length;
+const allAboveAvg = scores37.every(s => s > avg37);
+
+// Q38
+const tx = [100, 500, 900];
+const avgTx = tx.reduce((s, n) => s + n, 0) / tx.length;
+const firstAboveAvgTx = tx.find(t => t > avgTx);
+
+// Q39
+const evenSquaresTotal = [1, 2, 3, 4, 5].filter(n => n % 2 === 0).map(n => n * n).reduce((s, n) => s + n, 0);
+
+// Q40
+const sumPositives40 = [...[-1, 2], ...[3, -4]].filter(n => n > 0).reduce((s, n) => s + n, 0);
+
+// Q41
+const isPrime = n => n > 1 && Array.from({ length: n - 2 }, (_, i) => i + 2).every(i => n % i !== 0);
+const anyPrime = [4, 6, 9, 11].some(isPrime);
+
+// Q42
+const weightedTotal = [30, 60, 80].map(v => v > 50 ? v * 2 : v).reduce((s, n) => s + n, 0);
+
+// Q43
+let runSum = 0;
+const firstGreaterThanCumulative = [10, 20, 50].find(n => (runSum += n) && n > runSum - n);
+
+// Q44
+const salaryPayout = [20000, 30000].map(s => s + 2000).map(s => s * 0.9).reduce((s, n) => s + n, 0);
+
+// Q45
+const withinBudget = [400, 800, 1200].every(p => p <= 1000);
+
+// Q46
+const maxValue = Math.max(...[10, 40], ...[30, 20]);
+
+// Q47
+const nums47 = [10, 20, 60];
+const avg47 = nums47.reduce((s, n) => s + n, 0) / nums47.length;
+const failRule = nums47.find(n => n > 2 * avg47);
+
+// Q48
+const totalKm = [3, 6, 10].filter(k => k > 5).map(k => k + 2).reduce((s, n) => s + n, 0);
+
+// Q49
+const allUnique = new Set([1, 2, 3, 2]).size === [1, 2, 3, 2].length;
+
+// Q50 FINAL BOSS
+const all50 = [...[1, 2, 3], ...[4, 5, 6]];
+const avg50 = all50.reduce((s, n) => s + n, 0) / all50.length;
+const finalResult = all50.filter(n => n > avg50).map(n => n * n).reduce((s, n) => s + n, 0);
