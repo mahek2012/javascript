@@ -1603,3 +1603,949 @@ so they can be called before definition.
   <p>Answer or Error: 300</p>
   <p>Why: 3 se divisible numbers ka final sum.</p>
 </div>
+
+
+<!-- JavaScript – Interview‑Style Practice Questions (Beginner → Advanced) -->
+/*****************************************************
+ 🟢 VARIABLES & DATA TYPES (1–15)
+*****************************************************/
+
+let a = "a";
+let b = "10";
+let c = 10;
+let d;
+let e = null;
+
+// 1
+console.log(a == "a");   // true (value check)
+console.log(a === "a");  // true (value + type same)
+
+// 2
+console.log(b == c);   // true (string "10" → number 10)
+console.log(b === c);  // false (string !== number)
+// ERROR REASON: == does type coercion, === does not.
+
+// 3
+b = Number(b);
+console.log(b === c); // true
+
+// 4
+console.log(d === undefined); // true
+
+// 5
+if (d == null) console.log("d is null or undefined");
+if (e == null) console.log("e is null or undefined");
+
+// 6
+console.log(null == undefined);  // true
+console.log(null === undefined); // false
+
+// 7
+console.log(c + "10"); // "1010" (string concat)
+console.log(c + Number("10")); // 20 (fixed)
+
+// 8
+let result = c / "a";
+console.log(Number.isNaN(result)); // true
+
+// 9
+let num1 = Number("10");
+let num2 = +"10";
+
+// 10
+let str1 = String(c);
+let str2 = c.toString();
+
+// 11
+console.log(Boolean(0)); // false
+console.log(!!"hello");  // true
+
+// 12
+const pi = 3.14;
+// pi = 3; ❌ ERROR: Assignment to constant variable
+
+// 13
+let x = 5;
+let y = x;
+y = 20;
+console.log(x); // 5 (unchanged)
+
+// 14
+console.log(0 == false); // true (coercion)
+
+// 15
+console.log("5" === 5); // false (fixed using strict equality)
+
+
+
+/*****************************************************
+ 🟢 OPERATORS (16–30)
+*****************************************************/
+
+// 16 Even without %
+let n = 4;
+console.log((n & 1) === 0);
+
+// 17 Max without if or Math.max
+let m1 = 5, m2 = 9;
+let max = m1 > m2 ? m1 : m2;
+
+// 18 Calculator
+function calc(a,b,op){
+  if(op==="+") return a+b;
+  if(op==="-") return a-b;
+  if(op==="*") return a*b;
+  if(op==="/") return a/b;
+}
+
+// 19 Default
+let username = null;
+console.log(username ?? "Guest");
+
+// 20
+let age = 18;
+let status = age>=18 ? "Adult":"Minor";
+
+// 21
+let marks = 85;
+let grade = marks>=90?"A":marks>=75?"B":"C";
+
+// 22
+true && console.log("Executed");
+
+// 23
+console.log(false && "Won’t run");
+
+// 24
+console.log("5" == 5);  // true
+console.log("5" === 5); // false
+
+// 25
+let val = null;
+console.log(val ?? "Default");
+
+// 26
+console.log(0 || 100);  // 100
+console.log(0 ?? 100);  // 0
+
+// 27
+let arr1=[1,2], arr2=[3,4];
+let merged=[...arr1,...arr2];
+
+// 28
+function sumAll(...nums){
+  return nums.reduce((a,b)=>a+b,0);
+}
+
+// 29
+let copy=[...arr1];
+copy.push(99);
+
+// 30
+console.log(2+3*4); // 14 (multiplication first)
+
+
+
+/*****************************************************
+ 🟡 CONTROL FLOW (31–45)
+*****************************************************/
+
+// 31
+function gradeSys(m){
+ if(m>=90) return "A";
+ else if(m>=75) return "B";
+ else return "C";
+}
+
+// 32
+function gradeSwitch(g){
+ switch(true){
+  case g>=90: return "A";
+  case g>=75: return "B";
+  default: return "C";
+ }
+}
+
+// 33
+switch(2){
+ case 1: console.log("One");
+ case 2: console.log("Two"); // fall-through
+}
+
+// 34
+let user="admin", pass="123";
+if(user==="admin"){
+ if(pass==="123") console.log("Login success");
+}
+
+// 35
+if(user==="admin" && pass==="123") console.log("Login success");
+
+// 36
+if(true && true) console.log("Both true");
+
+// 37
+if(age>18 || age===18) console.log("Valid");
+
+// 38
+let choice=1;
+switch(choice){
+ case 1: console.log("Start"); break;
+ case 2: console.log("Stop"); break;
+}
+
+// 39 Missing break shows fall-through
+
+// 40 if-else equivalent of switch done above
+
+// 41
+let num=50;
+if(num>=1 && num<=100) console.log("In range");
+
+// 42
+function test(val){
+ if(!val) return "Invalid";
+ return "Valid";
+}
+
+// 43
+let light="red";
+switch(light){
+ case "red": console.log("Stop"); break;
+ case "green": console.log("Go"); break;
+}
+
+// 44
+let rain=true;
+if(rain) console.log("Take umbrella");
+
+// 45
+function divide(a,b){
+ if(b===0) return "Cannot divide by zero";
+ return a/b;
+}
+
+
+
+/*****************************************************
+ 🟡 LOOPS (46–60)
+*****************************************************/
+
+// 46
+for(let i=1;i<=100;i++) console.log(i);
+
+// 47
+for(let i=2;i<=100;i+=2) console.log(i);
+
+// 48
+for(let i=1;i<=10;i++){
+ if(i===5) break;
+}
+
+// 49
+for(let i=1;i<=10;i++){
+ if(i%3===0) continue;
+}
+
+// 50
+let sum=0;
+for(let i=1;i<=5;i++) sum+=i;
+
+// 51 Reverse number
+let numRev=123, rev=0;
+while(numRev>0){
+ rev=rev*10+numRev%10;
+ numRev=Math.floor(numRev/10);
+}
+
+// 52 Count digits
+let count=0,temp=12345;
+while(temp>0){ count++; temp=Math.floor(temp/10); }
+
+// 53 Factorial
+let fact=1;
+for(let i=1;i<=5;i++) fact*=i;
+
+// 54 Fibonacci
+let f1=0,f2=1;
+for(let i=0;i<5;i++){
+ let next=f1+f2;
+ f1=f2; f2=next;
+}
+
+// 55 Break nested
+outer: for(let i=0;i<3;i++){
+ for(let j=0;j<3;j++){
+  break outer;
+ }
+}
+
+// 56 continue shown above
+
+// 57 Multiplication
+for(let i=1;i<=10;i++) console.log(5*i);
+
+// 58 Infinite loop fix
+let k=0;
+while(k<5){ k++; }
+
+// 59 for vs while → for when count known
+
+// 60
+[1,2,3].forEach(n=>console.log(n));
+
+
+
+/*****************************************************
+ 🟡 FUNCTIONS (61–80)
+*****************************************************/
+
+// 61
+function sum(a,b){ return a+b; }
+
+// 62
+const sumArrow=(a,b)=>a+b;
+
+// 63
+function greet(name="Guest"){ return name; }
+
+// 64
+function outer(){ return function(){ return "Inner"; } }
+
+// 65
+function run(fn){ fn(); }
+
+// 66
+function process(cb){ cb("Done"); }
+
+// 67 Pure
+function add(a,b){ return a+b; }
+
+// 68 Side effect
+let counter=0;
+function inc(){ counter++; }
+
+// 69 Recursion
+function factRec(n){
+ if(n===1) return 1;
+ return n*factRec(n-1);
+}
+
+// 70 Iterative
+function factIter(n){
+ let r=1;
+ for(let i=1;i<=n;i++) r*=i;
+ return r;
+}
+
+// 71
+function total(...args){
+ return args.reduce((a,b)=>a+b,0);
+}
+
+// 72
+function hof(fn){ return fn(5); }
+
+// 73 Closure
+function counterFn(){
+ let c=0;
+ return ()=>++c;
+}
+
+// 74 Counter
+let cnt=counterFn();
+
+// 75 Currying
+const multiply=a=>b=>a*b;
+
+// 76 Memoization
+function memo(){
+ let cache={};
+ return function(n){
+  if(cache[n]) return cache[n];
+  return cache[n]=n*n;
+ }
+}
+
+// 77
+function safe(a){
+ if(typeof a!=="number") return "Invalid";
+ return a*2;
+}
+
+// 78 Arrow doesn’t have own this
+
+// 79 Run once
+let once=(function(){
+ let done=false;
+ return function(){
+  if(!done){ done=true; console.log("Run"); }
+ }
+})();
+
+// 80 DRY
+function square(n){ return n*n; }
+
+
+
+/*****************************************************
+ 🔵 ARRAYS (81–101)
+*****************************************************/
+
+let arr=[1,2,3,4,5];
+
+// 81
+arr.reduce((a,b)=>a+b,0);
+
+// 82
+Math.max(...arr);
+
+// 83
+[...new Set([1,2,2,3])];
+
+// 84
+let sorted=[...arr].sort((a,b)=>b-a);
+let second=sorted[1];
+
+// 85
+arr.filter(n=>n>0);
+
+// 86
+arr.map(n=>n*n);
+
+// 87
+arr.reduce((c)=>c+1,0);
+
+// 88
+arr.filter(n=>n>2).map(n=>n*2).reduce((a,b)=>a+b,0);
+
+// 89
+arr.find(n=>n>3);
+
+// 90
+arr.some(n=>n>4);
+
+// 91
+arr.every(n=>n>0);
+
+// 92
+let [first,...rest]=arr;
+
+// 93
+[...arr,...[6,7]];
+
+// 94 Deep clone
+JSON.parse(JSON.stringify(arr));
+
+// 95 Bubble sort
+function bubble(a){
+ for(let i=0;i<a.length;i++){
+  for(let j=0;j<a.length-1;j++){
+   if(a[j]>a[j+1]){
+    [a[j],a[j+1]]=[a[j+1],a[j]];
+   }
+  }
+ }
+ return a;
+}
+
+// 96 Rotate
+function rotate(a){
+ return [...a.slice(1),a[0]];
+}
+
+// 97 Flatten
+function flat(a){
+ return a.reduce((acc,val)=>
+  Array.isArray(val)?acc.concat(flat(val)):acc.concat(val),[]);
+}
+
+// 98 Custom map
+Array.prototype.myMap=function(cb){
+ let res=[];
+ for(let i=0;i<this.length;i++){
+  res.push(cb(this[i],i,this));
+ }
+ return res;
+}
+
+// 99 Custom filter
+Array.prototype.myFilter=function(cb){
+ let res=[];
+ for(let i=0;i<this.length;i++){
+  if(cb(this[i])) res.push(this[i]);
+ }
+ return res;
+}
+
+// 100 Custom reduce
+Array.prototype.myReduce=function(cb,acc){
+ for(let i=0;i<this.length;i++){
+  acc=cb(acc,this[i]);
+ }
+ return acc;
+}
+
+// 101 FINAL BOSS
+let final = arr
+ .filter(n=>n%2===0)
+ .map(n=>n*10)
+ .reduce((a,b)=>a+b,0);
+
+console.log(final);
+
+<!-- JavaScript Core Concepts – Interview Questions (Beginner → Advanced) -->
+# JavaScript Interview Q&A (Beginner to Advanced)
+
+---
+
+# 🟢 BEGINNER LEVEL (1–20)
+
+## Q1. Variables
+
+`var` is function-scoped and can be re-declared.
+`let` is block-scoped and can be reassigned.
+`const` is block-scoped and cannot be reassigned.
+
+---
+
+## Q2. Data Types
+
+Primitive types:
+
+* string
+* number
+* boolean
+* undefined
+* null
+* bigint
+* symbol
+
+---
+
+## Q3. Type Checking
+
+Use `typeof` operator.
+
+```js
+typeof variable;
+```
+
+---
+
+## Q4. Operators
+
+`==` compares values (type coercion allowed).
+`===` compares value and type (strict comparison).
+
+---
+
+## Q5. Arithmetic Operators
+
+```js
+let x = 10;
+console.log(x + 5 * 2);
+```
+
+Output: `20`
+Reason: Multiplication happens before addition.
+
+---
+
+## Q6. String Concatenation
+
+```js
+console.log('5' + 2);
+```
+
+Output: `'52'` (number converts to string)
+
+---
+
+## Q7. Boolean Logic
+
+```js
+console.log(true && false);
+```
+
+Output: `false`
+
+---
+
+## Q8. Functions
+
+A function is a reusable block of code used to perform a task.
+
+---
+
+## Q9. Function Call
+
+```js
+function add(a, b) {
+  return a + b;
+}
+add(2, 3);
+```
+
+Output: `5`
+
+---
+
+## Q10. Arrays
+
+```js
+let arr = [1, 2, 3];
+```
+
+---
+
+## Q11. Array Access
+
+```js
+const arr = [10, 20, 30];
+console.log(arr[1]);
+```
+
+Output: `20`
+
+---
+
+## Q12. Objects
+
+An object stores data in key-value pairs.
+
+---
+
+## Q13. Object Access
+
+```js
+const user = { name: 'A', age: 20 };
+console.log(user.age);
+```
+
+Output: `20`
+
+---
+
+## Q14. Control Flow
+
+An `if` statement runs code only if a condition is true.
+
+---
+
+## Q15. Condition Check
+
+```js
+let x = 5;
+if (x > 3) console.log('Yes');
+```
+
+Output: `Yes`
+
+---
+
+## Q16. Loops
+
+A loop repeats code multiple times.
+
+---
+
+## Q17. for Loop
+
+```js
+for (let i = 0; i < 3; i++) {
+  console.log(i);
+}
+```
+
+Output:
+
+```
+0
+1
+2
+```
+
+---
+
+## Q18. while Loop
+
+Use `while` when the number of iterations is unknown.
+
+---
+
+## Q19. Increment Operator
+
+```js
+let a = 5;
+a++;
+console.log(a);
+```
+
+Output: `6`
+
+---
+
+## Q20. Comments
+
+Single-line:
+
+```js
+// comment
+```
+
+Multi-line:
+
+```js
+/* comment */
+```
+
+---
+
+# 🟡 INTERMEDIATE LEVEL (21–35)
+
+## Q21. Scope
+
+Block scope means variables declared with `let` or `const` exist only inside `{}`.
+
+---
+
+## Q22. Hoisting
+
+Hoisting moves variable and function declarations to the top of their scope before execution.
+
+---
+
+## Q23. Undefined vs Null
+
+`undefined` = variable declared but not assigned.
+`null` = intentional empty value.
+
+---
+
+## Q24. Truthy & Falsy
+
+Falsy values:
+
+* false
+* 0
+* ''
+* null
+* undefined
+* NaN
+
+---
+
+## Q25. Functions vs Arrow Functions
+
+Arrow functions:
+
+* No own `this`
+* Shorter syntax
+
+---
+
+## Q26. Parameters vs Arguments
+
+Parameters = variables in function definition.
+Arguments = values passed when calling.
+
+---
+
+## Q27. Return Keyword
+
+If no return → function returns `undefined`.
+
+---
+
+## Q28. Array Methods
+
+`push()` adds to end.
+`pop()` removes from end.
+
+---
+
+## Q29. Loop vs Array Methods
+
+Use loops for complex control.
+Use array methods for cleaner functional style.
+
+---
+
+## Q30. Object Iteration
+
+```js
+for (let key in obj) {
+  console.log(key, obj[key]);
+}
+```
+
+---
+
+## Q31. Break & Continue
+
+`break` stops loop.
+`continue` skips current iteration.
+
+---
+
+## Q32. Comparison Operators
+
+```js
+console.log(0 == false);  // true
+console.log(0 === false); // false
+```
+
+---
+
+## Q33. Ternary Operator
+
+```js
+status = age >= 18 ? 'adult' : status;
+```
+
+---
+
+## Q34. Array Destructuring
+
+Extract values from array into variables.
+
+```js
+let [a, b] = [1, 2];
+```
+
+---
+
+## Q35. Spread Operator
+
+Copies or merges arrays.
+
+```js
+let newArr = [...arr];
+```
+
+---
+
+# 🔵 ADVANCED LEVEL (36–50)
+
+## Q36. Closures
+
+A closure remembers variables from its outer scope.
+
+```js
+function outer() {
+  let count = 0;
+  return function() {
+    count++;
+    return count;
+  }
+}
+```
+
+---
+
+## Q37. Execution Context
+
+Environment where JS code runs (Global & Function context).
+
+---
+
+## Q38. Call Stack
+
+Stack that manages function execution order (LIFO).
+
+---
+
+## Q39. Pass by Value vs Reference
+
+Primitives copy by value.
+Objects/arrays copy by reference.
+
+---
+
+## Q40. Shallow vs Deep Copy
+
+Shallow copy copies references.
+Deep copy creates fully independent copy.
+
+---
+
+## Q41. Higher-Order Functions
+
+A function that takes or returns another function.
+
+---
+
+## Q42. Callback Functions
+
+A function passed as an argument to another function.
+
+---
+
+## Q43. Immutability
+
+Prevents unexpected data changes and improves predictability.
+
+---
+
+## Q44. Event Loop
+
+Mechanism that handles asynchronous operations in JS.
+
+---
+
+## Q45. Synchronous vs Asynchronous
+
+Synchronous runs line by line.
+Asynchronous runs tasks without blocking execution.
+
+---
+
+## Q46. forEach vs map
+
+`forEach()` executes function but returns nothing.
+`map()` returns a new array.
+
+---
+
+## Q47. == Interview Trap ⭐
+
+```js
+console.log([] == []);
+```
+
+Output: `false`
+Reason: Different references.
+
+---
+
+## Q48. typeof Interview Trap ⭐
+
+```js
+console.log(typeof null);
+```
+
+Output: `'object'` (historical JS bug)
+
+---
+
+## Q49. NaN Check
+
+```js
+Number.isNaN(value);
+```
+
+---
+
+## Q50. FINAL INTERVIEW QUESTION 
+
+JavaScript execution flow:
+
+1. Global Execution Context created.
+2. Memory phase (hoisting).
+3. Code execution line by line.
+4. Functions pushed to Call Stack.
+5. Async tasks handled by Web APIs.
+6. Event Loop moves callbacks to Call Stack when ready.
+
+---
