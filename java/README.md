@@ -2549,3 +2549,431 @@ JavaScript execution flow:
 6. Event Loop moves callbacks to Call Stack when ready.
 
 ---
+
+<!-- JavaScript Dom -->
+<div>
+<h1> Example 1: </h1>
+<p>What is the DOM? How does it represent the HTML structure?</p>
+
+<p><b>Ans:</b></p>
+<p>
+DOM (Document Object Model) ek programming interface hai jo HTML document ko tree structure me represent karta hai.
+Har HTML tag ek node ban jata hai aur pura page ek tree ki tarah structure hota hai.
+</p>
+
+<p><b>Why:</b></p>
+<p>
+JavaScript DOM ke through HTML elements ko access aur manipulate kar sakta hai.
+</p>
+</div>
+
+<div>
+<h1> Example 2: </h1>
+<p>Name the types of nodes in the DOM tree.</p>
+
+<p><b>Ans:</b></p>
+<p>
+1. Element Node  
+2. Text Node  
+3. Attribute Node  
+4. Comment Node  
+5. Document Node
+</p>
+
+<p><b>Why:</b></p>
+<p>
+DOM tree me har cheez ek node hoti hai — chahe wo tag ho, text ho ya comment.
+</p>
+</div>
+
+<div>
+<h1> Example 3: </h1>
+<p>Difference between element node and text node?</p>
+
+<p><b>Ans:</b></p>
+<p>
+Element Node = HTML tag (jaise &lt;div&gt;, &lt;p&gt;)  
+Text Node = Tag ke andar ka text content
+</p>
+
+<p><b>Why:</b></p>
+<p>
+Element structure banata hai, text node content show karta hai.
+</p>
+</div>
+
+<div>
+<h1> Example 4: </h1>
+<p>Identify nodes in: &lt;div&gt;Hello&lt;span&gt;World&lt;/span&gt;&lt;/div&gt;</p>
+
+<p><b>Ans:</b></p>
+<p>
+Document Node  
+└── div (Element Node)  
+  ├── "Hello" (Text Node)  
+  └── span (Element Node)  
+    └── "World" (Text Node)
+</p>
+
+<p><b>Why:</b></p>
+<p>
+Har tag element node hai aur andar ka text text node hai.
+</p>
+</div>
+
+<div>
+<h1> Example 5: </h1>
+<p>Difference between getElementById and querySelector?</p>
+
+<p><b>Ans:</b></p>
+<p>
+getElementById("id") = Sirf ID se select karta hai  
+querySelector() = CSS selector use karta hai (#id, .class, tag)
+</p>
+
+<p><b>Why:</b></p>
+<p>
+querySelector flexible hai, getElementById fast aur specific hai.
+</p>
+</div>
+
+<div>
+<h1> Example 6: </h1>
+<p>What does getElementsByClassName return? Is it an array?</p>
+
+<p><b>Ans:</b></p>
+<p>
+Ye HTMLCollection return karta hai. Ye array nahi hota.
+</p>
+
+<p><b>Why:</b></p>
+<p>
+Isme length hoti hai lekin array methods (forEach etc.) directly use nahi kar sakte.
+</p>
+</div>
+
+<div>
+<h1> Example 7: </h1>
+<p>Select all buttons with class "buy-now".</p>
+
+<p><b>Ans:</b></p>
+<p>
+document.querySelectorAll(".buy-now");
+</p>
+
+<p><b>Why:</b></p>
+<p>
+querySelectorAll CSS selector use karke multiple elements return karta hai.
+</p>
+</div>
+
+<div>
+<h1> Example 8: </h1>
+<p>Select heading by ID and change text.</p>
+
+<p><b>Ans:</b></p>
+<p>
+let head = document.getElementById("heading");  
+head.textContent = "Welcome to JS DOM";
+</p>
+
+<p><b>Why:</b></p>
+<p>
+textContent se safe tarike se text change hota hai.
+</p>
+</div>
+
+<div>
+<h1> Example 9: </h1>
+<p>Select all &lt;li&gt; and print text.</p>
+
+<p><b>Ans:</b></p>
+<p>
+let list = document.querySelectorAll("li");  
+
+list.forEach((val)=>{  
+console.log(val.textContent);  
+});
+</p>
+
+<p><b>Why:</b></p>
+<p>
+querySelectorAll NodeList deta hai jisme forEach use kar sakte hain.
+</p>
+</div>
+
+<div>
+<h1> Example 10: </h1>
+<p>Difference between innerText, textContent and innerHTML?</p>
+
+<p><b>Ans:</b></p>
+<p>
+innerText = Visible text  
+textContent = Saara text (hidden bhi)  
+innerHTML = HTML tags ke saath content
+</p>
+
+<p><b>Why:</b></p>
+<p>
+innerHTML HTML ko parse karta hai, textContent sirf text handle karta hai.
+</p>
+</div>
+
+<div>
+<h1> Example 11: </h1>
+<p>When should you use textContent instead of innerHTML?</p>
+
+<p><b>Ans:</b></p>
+<p>
+Jab sirf text set karna ho aur HTML inject nahi karna ho.
+</p>
+
+<p><b>Why:</b></p>
+<p>
+Security ke liye (XSS attack avoid karne ke liye).
+</p>
+</div>
+
+<div>
+<h1> Example 12: </h1>
+<p>Replace paragraph content with &lt;b&gt; Updated &lt;/b&gt; by JavaScript</p>
+
+<p><b>Ans:</b></p>
+<p>
+let p = document.querySelector("p");  
+p.innerHTML = "&lt;b&gt; Updated &lt;/b&gt; by JavaScript";
+</p>
+
+<p><b>Why:</b></p>
+<p>
+innerHTML se HTML tags render hote hain.
+</p>
+</div>
+
+<div>
+<h1> Example 13: </h1>
+<p>How to get src of an image?</p>
+
+<p><b>Ans:</b></p>
+<p>
+let img = document.querySelector("img");  
+console.log(img.src);
+</p>
+
+<p><b>Why:</b></p>
+<p>
+src property image ka URL return karti hai.
+</p>
+</div>
+
+<div>
+<h1> Example 14: </h1>
+<p>What does setAttribute() do?</p>
+
+<p><b>Ans:</b></p>
+<p>
+Element me naya attribute add ya update karta hai.
+</p>
+
+<p><b>Why:</b></p>
+<p>
+Dynamic attribute control ke liye use hota hai.
+</p>
+</div>
+
+<div>
+<h1> Example 15: </h1>
+<p>Add title attribute to div dynamically.</p>
+
+<p><b>Ans:</b></p>
+<p>
+let div = document.querySelector("div");  
+div.setAttribute("title","This is a div");
+</p>
+
+<p><b>Why:</b></p>
+<p>
+setAttribute attribute ko dynamically add karta hai.
+</p>
+</div>
+
+<div>
+<h1> Example 16: </h1>
+<p>Remove disabled attribute from button.</p>
+
+<p><b>Ans:</b></p>
+<p>
+let btn = document.querySelector("button");  
+btn.removeAttribute("disabled");
+</p>
+
+<p><b>Why:</b></p>
+<p>
+removeAttribute attribute delete karta hai.
+</p>
+</div>
+
+<div>
+<h1> Example 17: </h1>
+<p>What does createElement() do? What is returned?</p>
+
+<p><b>Ans:</b></p>
+<p>
+Naya HTML element create karta hai aur element node return karta hai.
+</p>
+
+<p><b>Why:</b></p>
+<p>
+Dynamic DOM manipulation ke liye use hota hai.
+</p>
+</div>
+
+<div>
+<h1> Example 18: </h1>
+<p>Difference between appendChild() and prepend()?</p>
+
+<p><b>Ans:</b></p>
+<p>
+appendChild() = End me add karta hai  
+prepend() = Start me add karta hai
+</p>
+
+<p><b>Why:</b></p>
+<p>
+Position difference hota hai.
+</p>
+</div>
+
+<div>
+<h1> Example 19: </h1>
+<p>Can you remove element using removeChild()?</p>
+
+<p><b>Ans:</b></p>
+<p>
+Haan, parent.removeChild(child) se remove kar sakte hain.
+</p>
+
+<p><b>Why:</b></p>
+<p>
+Child element ko DOM se delete karta hai.
+</p>
+</div>
+
+<div>
+<h1> Example 20: </h1>
+<p>Create new list item and add to end of ul.</p>
+
+<p><b>Ans:</b></p>
+<p>
+let li = document.createElement("li");  
+li.textContent = "New Task";  
+document.querySelector("ul").appendChild(li);
+</p>
+
+<p><b>Why:</b></p>
+<p>
+createElement se new node banta hai aur appendChild se add hota hai.
+</p>
+</div>
+
+<div>
+<h1> Example 21: </h1>
+<p>Create new image and add at top of div.</p>
+
+<p><b>Ans:</b></p>
+<p>
+let img = document.createElement("img");  
+img.src = "https://via.placeholder.com/150";  
+document.querySelector("div").prepend(img);
+</p>
+
+<p><b>Why:</b></p>
+<p>
+prepend start position me element add karta hai.
+</p>
+</div>
+
+<div>
+<h1> Example 22: </h1>
+<p>Select first list item and delete it.</p>
+
+<p><b>Ans:</b></p>
+<p>
+let first = document.querySelector("ul li");  
+first.remove();
+</p>
+
+<p><b>Why:</b></p>
+<p>
+remove() direct element ko delete karta hai.
+</p>
+</div>
+
+<div>
+<h1> Example 23: </h1>
+<p>How to change background color?</p>
+
+<p><b>Ans:</b></p>
+<p>
+element.style.backgroundColor = "yellow";
+</p>
+
+<p><b>Why:</b></p>
+<p>
+.style se inline CSS change hota hai.
+</p>
+</div>
+
+<div>
+<h1> Example 24: </h1>
+<p>Difference between classList.add() and classList.toggle()?</p>
+
+<p><b>Ans:</b></p>
+<p>
+add() = Class add karta hai  
+toggle() = Agar class hai to remove karega, nahi hai to add karega
+</p>
+
+<p><b>Why:</b></p>
+<p>
+toggle dynamic switching ke liye useful hai.
+</p>
+</div>
+
+<div>
+<h1> Example 25: </h1>
+<p>Add highlight class to every even item.</p>
+
+<p><b>Ans:</b></p>
+<p>
+let li = document.querySelectorAll("ul li:nth-child(2n)");  
+
+li.forEach((elem)=>{  
+elem.classList.add("highlight");  
+});
+</p>
+
+<p><b>Why:</b></p>
+<p>
+nth-child(2n) even elements select karta hai.
+</p>
+</div>
+
+<div>
+<h1> Example 26: </h1>
+<p>Set font size of all &lt;p&gt; to 18px.</p>
+
+<p><b>Ans:</b></p>
+<p>
+let para = document.querySelectorAll("p");  
+
+para.forEach((p)=>{  
+p.style.fontSize = "18px";  
+});
+</p>
+
+<p><b>Why:</b></p>
+<p>
+Loop ke through sab elements ka style change hota hai.
+</p>
+</div>

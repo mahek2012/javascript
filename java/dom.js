@@ -110,3 +110,4 @@ card.classList.remove("card")
 //toggle -- class --> available --> remove it
 //          class --> not available --> add it
 card.classList.toggle("card")
+
