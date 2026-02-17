@@ -13,6 +13,12 @@
             height: 200px;
             border: 1px solid red;
         }
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            border-radius: 20px;
+        }
     </style>
 </head>
 <body>
@@ -21,10 +27,28 @@
     <br>
         <button class="btn">change color</button>
         <br><br>
-    <input >
+    <input type="text">
     <br><br>
-
-  <button class="btn1">Dark Mode</button>
+    <input type="text" class="text" />
+    <br /><br />
+    <h2>Selected Device: <i class="device">none</i></h2>
+    <select class="sel">
+        <option>Select your Device</option>
+        <option value="phone">Phone</option>
+        <option value="laptop">Laptop</option>
+        <option value="watch">Watch</option>
+        <option value="Tablet">Tablet</option>
+    </select>
+    <br /><br />
+      <button class="btn1">Dark Mode</button><br>
+    <div class="box"></div>
+    <br>
+    Change Background Color: <input type="color" class="bg-inp"><br>
+    Change Border Color: <input type="color" class="border-inp"><br>
+    <form action="">
+        <input type="text">
+        <input type="submit" value="submit">
+    </form>
     <!-- <button>Click on</button> -->
     <script src="event.js"></script>
 </body>

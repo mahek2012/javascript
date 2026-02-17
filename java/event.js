@@ -46,3 +46,36 @@ inp.addEventListener("input",(dets)=>{
         console.log(dets.data);
     }
 });
+
+//change -- when you change elements state
+let select = document.querySelector(".sel");
+let device = document.querySelector(".device")
+
+select.addEventListener("change", (dets)=>{
+    console.log(dets.target.value);
+    device.textContent = dets.target.value;
+})
+
+select.addEventListener("change", (dets)=>{
+    console.log(dets.target.value);
+    device.textContent = dets.target.value;
+})
+// change event => change div color and border color with color input
+let box1 = document.querySelector(".box");
+let bg_inp = document.querySelector(".bg-inp");
+let border_inp = document.querySelector(".border-inp");
+
+bg_inp.addEventListener("change", (dets)=>{
+    box1.style.backgroundColor = dets.target.value
+})
+border_inp.addEventListener("change", (dets)=>{
+    box1.style.borderColor = dets.target.value
+})
+
+//submit
+let form = document.querySelector("form");
+form.addEventListener("submit",() => {
+    document.body.style.backgroundColor = "green";
+})
+
+
