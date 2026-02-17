@@ -99,5 +99,20 @@ text.addEventListener("keydown", ()=> {
     text.style.color = "white";
     text.style.width = "5rem";
 });
+//mouse move --effect
+
 //keydown --> keyboard checker
 
+// ===============================================
+// Event Object:
+// sel.addEventListener("change", (dets) => {
+//   console.log(dets); ==> dets -- that called event object
+// });
+
+// target, type, preventDefault
+// target --> that show element
+// type --> show Event Type
+// preventDefault --> use for html-form --> prevent form to refresh and clean details
+
+// ==============================
+// event delegation ==> darek child par event listener na lagavata only parent par event listner lagavu
