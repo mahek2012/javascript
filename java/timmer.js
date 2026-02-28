@@ -40,6 +40,27 @@ btn.addEventListener("click", () => {
 
 // Real use: delaying UI actions, auto-refresh
 
+// Downloading card
+let bar = document.querySelector(".progress-bar");
+let parcent = document.querySelector(".percent");
+let h2 = document.querySelector("h2");
+// let photo = document.querySelector(".photo");
+let count = 0;
 
+setInterval(() => {
+  if (count <= 100) {
+    bar.style.width = `${count}%`;
+    parcent.textContent = `${count}%`;
+    count++;
+  }
+  if (count === 100){
+    h2.textContent = "Downloaded";
+  }
+  if (count <= 1000) {
+  document.querySelector(".photo").style.height = `${count}px`;
+  count++;
+  console.log(count);
+  }
+}, 100);
 
 // setTimeout Vs setInterval
